@@ -2,11 +2,15 @@ import Hero from "@/components/home/Hero";
 import ManagedMedia from "@/components/shared/ManagedMedia";
 import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
 import paidSearchImg from "../../../../public/service/service_Image1.png";
+import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
+import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import ReuseableTwo from "@/components/shared/ReuseableTwo";
 
 const Page = () => {
   return (
     <div>
       <Hero />
+
       <ManagedMedia
         subtitle="Expert Services"
         title="Managed Media"
@@ -20,6 +24,25 @@ const Page = () => {
         link="#"
       />
 
+      <RatailMediaNetwork
+        title="Brand Protection"
+        description="Your brand is your most asset and in today’s crowded digital shelves, it needs constant defense. We monitor listings for unauthorized sellers, pricing violations, inaccurate product details, and counterfeit activity. Our team acts quickly, identifies issues, corrects content, and maintains brand consistency, ensuring that your presence across the platform reflects your standards and values."
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/Reuseabale/brandProtection.png"
+        imageAlt="Brand protection"
+      />
+
+      <ReuseableTwo
+        title="Optimization Metrics"
+        description="We analyze real-time campaign data to optimize strategies, enhance targeting precision, and maximize ROAS. Through ongoing performance refinement, bid adjustments, and trend analysis, we ensure every advertising dollar delivers measurable impact, driving stronger conversions, greater efficiency, and sustainable growth across all major digital retail platforms. "
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/Reuseabale/metrics.png"
+        imageAlt="Optimization Metrics"
+      />
+
+      <ReadyToTransform />
     </div>
   );
 };

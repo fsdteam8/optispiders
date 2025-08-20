@@ -1,7 +1,11 @@
 import ManagedMedia from "@/components/shared/ManagedMedia";
 import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
-import service_image_3 from "../../../../public/service/service_image_3.png"
+import service_image_3 from "../../../../public/service/service_image_3.png";
 import { Globe } from "lucide-react";
+import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
+import ReuseableTwo from "@/components/shared/ReuseableTwo";
+import SyndicationSupport from "@/components/syndicationSupport/SyndicationSupport";
+import ReadyToTransform from "@/components/shared/ReadyToTransform";
 
 const Page = () => {
   return (
@@ -16,10 +20,32 @@ const Page = () => {
         title="Retail Excellence"
         description="At Optispider, Retail Excellence means ensuring your business runs smoothly, efficiently, and profitably across online marketplaces. We go beyond sales performance focusing on the integrity of your brand, operational compliance, and financial accuracy. With our team monitoring the backend as closely as the front end, you gain peace of mind and better profitability."
         image={service_image_3}
-        link="#"   
-        subtitle={"Expert Services"} 
+        link="#"
+        subtitle={"Expert Services"}
         icon={<Globe size={20} />}
       />
+
+      <RatailMediaNetwork
+        title="Brand Protection"
+        description="Your brand is your most asset and in today’s crowded digital shelves, it needs constant defense. We monitor listings for unauthorized sellers, pricing violations, inaccurate product details, and counterfeit activity. Our team acts quickly, identifies issues, corrects content, and maintains brand consistency, ensuring that your presence across the platform reflects your standards and values."
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/Reuseabale/brandProtection.png"
+        imageAlt="Brand protection"
+      />
+
+      <ReuseableTwo
+        title="Fee Recovery"
+        description="Hidden charges and billing discrepancies can quietly eat into your margins. We analyze your transaction history, advertising expenditure, and fulfillment fees to uncover overcharges or errors. Our team works directly with platform support teams to file claims, recover lost revenue, and ensure your financial records are accurate. It's the money you earned our job is to help you get it back."
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/Reuseabale/feerecovery.png"
+        imageAlt="Optimization Metrics"
+      />
+
+      <SyndicationSupport />
+
+      <ReadyToTransform />
     </div>
   );
 };

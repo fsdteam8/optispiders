@@ -1,26 +1,40 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
 
 const SyndicationSupport = () => {
   return (
     <section>
-        <div className='container mx-auto my-32'>
-            <div className='flex flex-col md:flex-row justify-center md:justify-between items-center'>
-                <div className='md:w-[60%]'>
-                    <h2 className='text-[#063668] text-[32px] md:text-[48px] font-bold mb-4'>Content Syndication Support</h2>
-                    <p className='text-xs md:text-[16px] font-normal text-[#2F2F2F] mb-12 leading-[120%]'>We provide full support for content distribution via syndication platforms and direct uploads. Our process ensures product data, digital assets, and creative content are correctly formatted, version-controlled, and distributed efficiently—minimizing content drift, preserving brand consistency, and maximizing accuracy, visibility, and performance across all key digital retail endpoints.</p>
-                    <button className=" bg-[#2793D7] text-white px-[36px] py-[13px] rounded-xl text-[16px] lg:text-[18px]">Learn more →</button>
-                </div>
-                <div className='md:w-[30%] mt-10 md:mt-0'>
-                    <Image src={'/Reuseabale/syndication.png'} alt='syndication support' width={527} height={527} />
-                </div>
-
-
-            </div>
+      <div className="container mx-auto my-32">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
+          <div className="md:w-[60%]">
+            <h2 className="text-[#063668] text-[32px] md:text-[48px] font-bold mb-4">
+              Content Syndication Support
+            </h2>
+            <p className="text-xs md:text-[16px] font-normal text-[#2F2F2F] mb-12 leading-[120%]">
+              We provide full support for content distribution via syndication
+              platforms and direct uploads. Our process ensures product data,
+              digital assets, and creative content are correctly formatted,
+              version-controlled, and distributed efficiently—minimizing content
+              drift, preserving brand consistency, and maximizing accuracy,
+              visibility, and performance across all key digital retail
+              endpoints.
+            </p>
+            <button className=" bg-[#2793D7] text-white px-[36px] py-[13px] rounded-xl text-[16px] lg:text-[18px]">
+              Learn more →
+            </button>
+          </div>
+          <div className="md:w-[30%] mt-10 md:mt-0">
+            <Image
+              src={"/Reuseabale/syndication.png"}
+              alt="syndication support"
+              width={527}
+              height={527}
+            />
+          </div>
         </div>
-
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default SyndicationSupport
+export default SyndicationSupport;

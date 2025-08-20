@@ -6,10 +6,12 @@ import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
 import ReuseableTwo from "@/components/shared/ReuseableTwo";
 import SyndicationSupport from "@/components/syndicationSupport/SyndicationSupport";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import Hero from "@/components/home/Hero";
 
 const Page = () => {
   return (
     <div>
+      <Hero isStatsShow={false}/>
       <ManagedMedia
         subtitle="Retail Excellence Services"
         title="Retail Excellence"

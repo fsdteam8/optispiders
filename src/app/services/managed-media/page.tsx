@@ -9,7 +9,7 @@ import ReuseableTwo from "@/components/shared/ReuseableTwo";
 const Page = () => {
   return (
     <div>
-      <Hero />
+      <Hero isStatsShow={false}/>
 
       <ManagedMedia
         subtitle="Expert Services"

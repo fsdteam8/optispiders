@@ -14,7 +14,8 @@ const TermsOfService = () => {
           </h3>
           <div className="text-xs md:text-[16px] font-normal mb-4 leading-[150%] text-[#2F2F2F] flex flex-col gap-5">
             <span className=" text-[#2F2F2F">
-              This website (the “Website”) is operated by OptiSpider LLC, a
+              This website (the “Website”
+              ) is operated by OptiSpider LLC, a
               Wyoming limited liability (“OptiSpider,” “we,” “us,” or “our”).
             </span>
             <span>

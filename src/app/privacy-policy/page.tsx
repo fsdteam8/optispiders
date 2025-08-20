@@ -1,5 +1,12 @@
+
+import Privacypolicy from "@/components/privacy-policy/Privacypolicy";
+
 const Page = () => {
-  return <div>Privacy Policy</div>;
+  return(
+    <div>
+      <Privacypolicy />
+    </div>
+  )
 };
 
 export default Page;

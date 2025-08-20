@@ -19,6 +19,7 @@ const Page = () => {
         image={paidSearchImg}
         link="#"
       />
+
     </div>
   );
 };

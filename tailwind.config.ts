@@ -8,6 +8,20 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        "2xl": "2rem",
+        xl: "2rem",
+        lg: "1.5rem",
+        md: "1.5rem",
+        sm: "1rem",
+        DEFAULT: "1rem",
+      },
+      screens: {
+        "2xl": "1336px",
+      },
+    },
     extend: {
       colors: {
         background: "hsl(var(--background))",

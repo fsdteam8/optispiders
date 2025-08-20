@@ -9,7 +9,7 @@ const MediaNetwork = () => {
           title="Retail Media Network"
           description="Welcome to the Retail Media Network, where we connect brands with audiences through innovative advertising solutions."
           buttonText="Learn More"
-          buttonLink="/learn-more"
+          buttonLink="/"
           imageSrc="/Reuseabale/image 89.png"
           imageAlt="media network"
         />

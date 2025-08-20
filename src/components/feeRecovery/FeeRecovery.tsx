@@ -9,7 +9,7 @@ const FeeRecovery = () => {
           title="Fee Recovery"
           description="Hidden charges and billing discrepancies can quietly eat into your margins. We analyze your transaction history, advertising expenditure, and fulfillment fees to uncover overcharges or errors. Our team works directly with platform support teams to file claims, recover lost revenue, and ensure your financial records are accurate. It's the money you earned our job is to help you get it back. "
           buttonText="Learn More"
-          buttonLink="/learn-more"
+          buttonLink="/"
           imageSrc="/Reuseabale/feerecovery.png"
           imageAlt="Fee Recovery"
         />

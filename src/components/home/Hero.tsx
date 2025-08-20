@@ -4,7 +4,7 @@ import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 
-const Hero = () => {
+const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
   return (
     <div className="relative">
       <div
@@ -24,7 +24,7 @@ const Hero = () => {
             </h1>
 
             <h1 className="my-5 text-4xl font-semibold max-w-2xl">
-              Dominate the <span className="text-blue-500">digital shelf</span>{" "} 
+              Dominate the <span className="text-blue-500">digital shelf</span>{" "}
               with <span className="text-blue-500">AI-powered</span> solutions.
             </h1>
 
@@ -58,7 +58,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <Stats />
+      <div className={`${isStatsShow ? "" : "hidden"}`}>
+        <Stats />
+      </div>
     </div>
   );
 };

@@ -1,10 +1,16 @@
 import ManagedMedia from "@/components/shared/ManagedMedia";
-import service_image_2 from "../../../../public/service/service_image_2.png"
+import service_image_2 from "../../../../public/service/service_image_2.png";
 import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
+import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
+import ReuseableTwo from "@/components/shared/ReuseableTwo";
+import SyndicationSupport from "@/components/syndicationSupport/SyndicationSupport";
+import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import Hero from "@/components/home/Hero";
 
 const Page = () => {
   return (
     <div>
+      <Hero isStatsShow={false}/>
       <ManagedMedia
         subtitle="Expert Services"
         title="Produce Content & Creative"
@@ -17,6 +23,27 @@ const Page = () => {
         image={service_image_2}
         link="#"
       />
+
+      <RatailMediaNetwork
+        title="Retailer Brand Stores"
+        description="We design and implement modular brand stores that deliver a curated, on-platform experience for your customers. Leveraging UX best practices and mobile-first design, we showcase your brand architecture, cross-sell opportunities, and campaign messaging—while maintaining compliance with platform design standards"
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/Reuseabale/brandStores.png"
+        imageAlt="Brand protection"
+      />
+
+      <ReuseableTwo
+        title="Advertising Creative"
+        description="Our team produces static and rich media assets for use in retail media placements, including banners, video, and sponsored brand creatives. All assets are built to specification, optimized for performance testing, and aligned with your campaign objectives, ensuring seamless execution across programmatic, native, and paid search formats."
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/Reuseabale/advertising.png"
+        imageAlt="Optimization Metrics"
+      />
+      <SyndicationSupport />
+
+      <ReadyToTransform />
     </div>
   );
 };

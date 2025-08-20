@@ -30,7 +30,6 @@ export default function RootLayout({
           </header>
           <div>{children}</div>
           <footer>
-            <ReadyToTransform />
             <Footer />
           </footer>
         </main>

@@ -1,4 +1,3 @@
-import { Dot } from 'lucide-react'
 import React from 'react'
 
 const Privacypolicy = () => {

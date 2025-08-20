@@ -13,7 +13,7 @@ const ReadyToTransform = () => {
                     Ready to Transform Your Digital Commerce?
                 </h2>
                 <p className="text-white text-sm sm:text-base md:text-lg  mx-auto">
-                    Join hundreds of leading brands who've optimized their online presence and maximized their ROI with our solutions.
+                    Join hundreds of leading brands who&apos;ve optimized their online presence and maximized their ROI with our solutions.
                 </p>
             </div>
             <div className="flex flex-col md:flex-row gap-5 ">
@@ -39,7 +39,7 @@ const ReadyToTransform = () => {
                         </div>
                         <h3 className="text-white text-xl font-semibold mb-2">Optimize Spend</h3>
                         <p className="text-white text-base">
-                        A content score of 95% or higher is our standard—and we’re committed to keeping it that way.
+                        A content score of 95% or higher is our standard—and we&apos;re committed to keeping it that way.
                         </p>
                     </div>
                     <div className="bg-[#FFFFFF1A] rounded-2xl shadow-lg p-8 w-full md:w-1/3  text-center">
@@ -56,13 +56,13 @@ const ReadyToTransform = () => {
             </div>
             <div className="flex justify-center mt-20 py-10">
                     <div className="flex flex-col md:flex-row gap-5 w-full max-w-xl px-5 justify-center">
-                       {/* Primary Button */}
+                       
                        <button className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-blue-400 text-white text-center font-semibold px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
                        Get Started
                        <HiArrowRight className="text-lg" />
                        </button>
 
-                       {/* Secondary Button */}
+                       
                        <button className="w-full md:w-auto border border-white text-white font-semibold px-8 py-4 rounded-full flex items-center justify-center hover:bg-blue-500 hover:text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
                        Explore Products
                        </button>

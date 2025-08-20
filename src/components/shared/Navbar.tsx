@@ -148,8 +148,8 @@ const services = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 py-2 items-center justify-between">
+    <header className="w-full bg-white">
+      <div className="container flex h-16 py-3 items-center justify-between">
         {/* Logo */}
         <Link href={"/"}>
           <div className="hidden lg:block">

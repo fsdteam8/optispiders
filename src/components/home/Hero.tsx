@@ -24,7 +24,7 @@ const Hero = () => {
             </h1>
 
             <h1 className="my-5 text-4xl font-semibold max-w-2xl">
-              Dominate the <span className="text-blue-500">digital shelf</span>{" "}
+              Dominate the <span className="text-blue-500">digital shelf</span>{" "} 
               with <span className="text-blue-500">AI-powered</span> solutions.
             </h1>
 

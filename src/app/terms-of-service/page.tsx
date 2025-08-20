@@ -1,5 +1,9 @@
+import TermsOfService from "@/components/terms/TermsOfService";
+
 const Page = () => {
-  return <div>Terms of service</div>;
+  return <div>
+    <TermsOfService />
+  </div>;
 };
 
 export default Page;

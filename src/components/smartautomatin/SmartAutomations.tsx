@@ -26,12 +26,7 @@ const SmartAutomations = () => {
       <SmarterAutomation
         items={showcaseItems}
         rightImage="/Reuseabale/smartautomation.png"
-        rightFeatures={[
-          { title: "Growth" },
-          { title: "Brand Impact" },
-          { title: "Real-Time Optimization" },
-          { title: "Operations" },
-        ]}
+        
       />
     </div>
   );

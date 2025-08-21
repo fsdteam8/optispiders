@@ -91,10 +91,12 @@ const BlogSection = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-semibold mb-3">{blog.title}</h3>
+            <h3 className="text-xl text-[#063668] font-semibold mb-3">
+              {blog.title}
+            </h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-[#2F2F2F] text-sm leading-relaxed">
               {blog.description}
             </p>
           </div>

@@ -30,7 +30,7 @@ const RatailMediaNetwork = ({
             </p>
             <a
               href={buttonLink}
-              className="bg-[#2793D7] text-white px-[36px] py-[13px] rounded-xl text-[18px]"
+              className="bg-[#2793D7] text-white px-[36px] py-[13px] shadow-sm rounded-xl text-[18px]"
             >
               {buttonText} →
             </a>

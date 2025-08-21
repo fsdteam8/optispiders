@@ -38,7 +38,7 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
               </h1>
             )}
 
-            <h1 className="my-5 text-3xl sm:text-4xl lg:text-5xl font-semibold">
+            <h1 className="my-5 leading-[150%] text-3xl sm:text-4xl lg:text-[42px] font-semibold">
               {heading}
             </h1>
 

@@ -1,8 +1,8 @@
-import Stats from "@/app/(website)/_components/stats";
-import { images } from "@/constants/image";
-import { ArrowRight, Star } from "lucide-react";
-import Image from "next/image";
-import { Button } from "../ui/button";
+import Stats from '@/app/(website)/_components/stats'
+import { images } from '@/constants/image'
+import { ArrowRight, Star } from 'lucide-react'
+import Image from 'next/image'
+import { Button } from '../ui/button'
 
 const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
   return (
@@ -24,7 +24,7 @@ const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
             </h1>
 
             <h1 className="my-5 text-4xl font-semibold max-w-2xl">
-              Dominate the <span className="text-blue-500">digital shelf</span>{" "}
+              Dominate the <span className="text-blue-500">digital shelf</span>{' '}
               with <span className="text-blue-500">AI-powered</span> solutions.
             </h1>
 
@@ -58,11 +58,11 @@ const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
           </div>
         </div>
       </div>
-      <div className={`${isStatsShow ? "" : "hidden"}`}>
+      <div className={`${isStatsShow ? '' : 'hidden'}`}>
         <Stats />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

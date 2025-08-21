@@ -20,11 +20,13 @@ import {
 } from "@/components/ui/sheet";
 import { images } from "@/constants/image";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Menu } from "lucide-react";
+import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { products, serviceGroups, services } from "../../../utils/Navbar";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from "../ui/dropdown-menu";
+import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 
 export function Navbar() {
   const column1 = products.slice(0, 5);
@@ -58,12 +60,20 @@ export function Navbar() {
               </Link>
             </NavigationMenuItem>
 
+            {/* products */}
             <NavigationMenuItem>
               <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-              <NavigationMenuContent>
+              <NavigationMenuContent className="justify-">
                 <div className="grid w-[1000px] gap-6 p-6 md:grid-cols-3  min-w-[1000px] ">
                   {/* Column 1 */}
                   <div className="space-y-3 border border-gray/25 p-4 rounded-lg">
+                    <Link
+                      href={"/products/brands-and-shoppers-connect-instantly"}
+                      className="flex items-center gap-2 text-lg font-semibold text-primary"
+                    >
+                      <span className="font-medium ">Page 1</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                     {column1.map((product) => (
                       <div
                         key={product.title}
@@ -71,12 +81,9 @@ export function Navbar() {
                       >
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                         <div>
-                          <a
-                            href={product.href}
-                            className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
-                          >
+                          <h1 className="font-light text-foreground">
                             {product.title}
-                          </a>
+                          </h1>
                         </div>
                       </div>
                     ))}
@@ -84,6 +91,13 @@ export function Navbar() {
 
                   {/* Column 2 */}
                   <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
+                    <Link
+                      href={"/products/retail-operation"}
+                      className="flex items-center gap-2 text-lg font-semibold text-primary"
+                    >
+                      <span className="font-medium ">Page 2</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                     {column2.map((product) => (
                       <div
                         key={product.title}
@@ -91,12 +105,9 @@ export function Navbar() {
                       >
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                         <div>
-                          <a
-                            href={product.href}
-                            className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
-                          >
+                          <h1 className="font-light text-foreground">
                             {product.title}
-                          </a>
+                          </h1>
                         </div>
                       </div>
                     ))}
@@ -104,6 +115,13 @@ export function Navbar() {
 
                   {/* Column 3 */}
                   <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
+                    <Link
+                      href={""}
+                      className="flex items-center gap-2 text-lg font-semibold text-primary"
+                    >
+                      <span className="font-medium ">Page 3</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
                     {column3.map((product) => (
                       <div
                         key={product.title}
@@ -111,7 +129,7 @@ export function Navbar() {
                       >
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                         <div>
-                          <h1 className="font-medium text-gray-900 hover:text-blue-600 transition-colors">
+                          <h1 className="font-light text-foreground">
                             {product.title}
                           </h1>
                         </div>
@@ -122,6 +140,7 @@ export function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            {/* services */}
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -147,7 +166,7 @@ export function Navbar() {
                             >
                               <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                               <div>
-                                <h1 className="font-light text-foreground hover:text-blue-600 transition-colors">
+                                <h1 className="font-light text-foreground">
                                   {service.title}
                                 </h1>
                               </div>
@@ -161,12 +180,24 @@ export function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            {/* Resources Dropdown */}
             <NavigationMenuItem>
-              <Link href="/resources" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Resources
-                </NavigationMenuLink>
-              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="px-3 py-2 text-sm font-medium flex items-center gap-2">
+                  Resources <ChevronDown className="h-3 w-3" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="text-primary">
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <Link href="/about-us">About us</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer"asChild>
+                    <Link href="/contact-us">Contact us</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <Link href="/blogs">Blogs</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </NavigationMenuItem>
 
             <NavigationMenuItem>

@@ -4,14 +4,10 @@ import productsPage1 from "../../../../../public/product/productPage2_1.png";
 import productsPage3 from "../../../../../public/product/productPage2_3.png";
 import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import VisibilityIntelligence from "@/components/visibiliyIntelligence/VisibilityIntelligence";
 
 const Page = () => {
   return (
-<<<<<<< HEAD
-    <section>
-      <div className="container mx-auto"></div>
-    </section>
-=======
     <div>
       <Hero isStatsShow={false} />
 
@@ -40,11 +36,11 @@ const Page = () => {
         link="#"
       />
 
-      {/* Habib vai Ai khane Page ta call korben----- call korar por comment remove kore diben */}
+      <VisibilityIntelligence />
+
 
       <ReadyToTransform />
     </div>
->>>>>>> bc37c11d79f8bc281b269938b92d8b614f436b8e
   );
 };
 

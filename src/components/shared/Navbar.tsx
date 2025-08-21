@@ -96,7 +96,7 @@ export function Navbar() {
                   {/* Column 2 */}
                   <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
                     <Link
-                      href={"/products/retail-operation"}
+                      href={"/products/content-optimization"}
                       className="flex items-center gap-2 text-lg font-semibold text-primary"
                     >
                       <span className="font-medium ">Page 2</span>
@@ -120,7 +120,7 @@ export function Navbar() {
                   {/* Column 3 */}
                   <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
                     <Link
-                      href={""}
+                      href={"/products/retail-operation"}
                       className="flex items-center gap-2 text-lg font-semibold text-primary"
                     >
                       <span className="font-medium ">Page 3</span>

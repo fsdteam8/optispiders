@@ -28,7 +28,7 @@ const RatailMediaNetwork = ({
             <h2 className="text-[#063668] text-[24px] md:text-[32px] font-bold mb-6">
               {title}
             </h2>
-            <p className="md:text-xl text-sm font-normal text-[#2F2F2F] mb-12 leading-[120%]">
+            <p className="md:text-sm text-sm font-normal text-[#2F2F2F] mb-12 leading-[120%]">
               {description.includes("<br") ? (
                 <span dangerouslySetInnerHTML={{ __html: description }} />
               ) : (

@@ -32,13 +32,12 @@ export default function ServicePaidSearch({
         } justify-center items-center gap-10 md:gap-20`}
       >
         {/* Image */}
-        <div className="  aspect-square  mx-auto">
+        <div className="relative w-full max-w-md md:max-w-sm lg:max-w-lg aspect-square mx-auto">
           <Image
             src={image}
             alt={title}
-            width={1000}
-            height={1000}
-            className=" h-full  rounded-lg object-cover"
+            fill
+            className="rounded-lg object-cover"
             priority
           />
         </div>

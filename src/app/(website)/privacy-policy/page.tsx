@@ -1,4 +1,3 @@
-
 import Privacypolicy from "@/components/privacy-policy/Privacypolicy";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
 

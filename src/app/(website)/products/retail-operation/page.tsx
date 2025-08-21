@@ -4,6 +4,7 @@ import products1 from "../../../../../public/product/OptiSpider.png";
 import Hero from "@/components/home/Hero";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
 import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
+import RetailInsights from "../_components/RetailInsite";
 
  
 export default function page() {
@@ -27,6 +28,9 @@ export default function page() {
         imageSrc="/product/market_share.png"
         imageAlt="Market Share"
       />
+
+      <RetailInsights />
+
 
       <ReadyToTransform />
     </div>

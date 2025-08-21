@@ -1,3 +1,5 @@
+
+
 export const images = {
   logo: "/logo/logo.png",
   banner: "/home/banner.png",
@@ -17,5 +19,7 @@ export const images = {
   progressBar: "/home/progress-bar.png",
   optispider: "/home/optispiders.png",
   ourProduct: "/home/our-product.png",
-  service: "/home/service.png"
+  service: "/home/service.png",
+  products1: "/product/products1.png",
+  products6: "/product/web_impact_report.png"
 };

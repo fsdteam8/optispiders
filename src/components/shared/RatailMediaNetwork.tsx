@@ -19,14 +19,18 @@ const RatailMediaNetwork = ({
 }: RatailMediaNetworkProps) => {
   return (
     <section className=" shadow-md bg-[#FAFAFA]">
-      <div className="container mx-auto py-32 ">
+      <div className="container mx-auto py-20 ">
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-1/2">
-            <h2 className="text-[#063668] text-[32px] md:text-[48px] font-bold mb-6">
+            <h2 className="text-[#063668] text-[32px] md:text-[32px] font-bold mb-6">
               {title}
             </h2>
-            <p className="text-xs md:text-[16px] font-normal text-[#2F2F2F] mb-12 leading-[120%]">
-              {description}
+            <p className="text-xl md:text-[14px] font-normal text-[#2F2F2F] mb-12 leading-[120%]">
+              {description.includes("<br") ? (
+                <span dangerouslySetInnerHTML={{ __html: description }} />
+              ) : (
+                description
+              )}
             </p>
             <a
               href={buttonLink}
@@ -35,8 +39,14 @@ const RatailMediaNetwork = ({
               {buttonText} →
             </a>
           </div>
-          <div className="md:w-[40%] mt-10 md:mt-0">
-            <Image src={imageSrc} alt={imageAlt} width={527} height={527} />
+          <div className="md:w-[40%] mt-10 md:mt-0 rounded-lg overflow-hidden">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

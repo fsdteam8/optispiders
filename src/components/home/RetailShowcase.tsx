@@ -1,7 +1,6 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { images } from "@/constants/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -11,25 +10,17 @@ interface ShowcaseItem {
   description: string;
 }
 
-const showcaseItems: ShowcaseItem[] = [
-  {
-    title: "Transform Your Retail Advertising with Rich Media",
-    description:
-      "OptiSpiders' Rich Media Service transforms retail advertising into captivating, interactive experiences. Our AI-powered formats—like dynamic video ads, shoppable carousels, and 360° product views—engage shoppers and drive real results. Seamlessly integrated across top retail platforms, our rich media ensures your brand stands out, captures attention, and inspires action every step of the way.",
-  },
-  {
-    title: "OptiSpiders Retail Navigator",
-    description:
-      "Stay ahead of the competition with OptiSpiders' all-in-one competitive intelligence at your fingertips. Monitor competitor updates, simplify fee recovery, monitor every product's shelf presence, and gain clear, actionable insights with advanced analytics. Prioritize, efficient, and built for modern retail teams who want to stay ahead.",
-  },
-  {
-    title: "OptiSpiders Market Sense",
-    description:
-      "Unlock deeper market insights with OptiSpiders—track market share, monitor competitors, and analyze your digital shelf with precision. Make smarter decisions, spot opportunities, and stay ahead in every channel.",
-  },
-];
+interface ShowcaseSectionProps {
+  items: ShowcaseItem[];
+  imageSrc: string;
+  reverse?: boolean;  
+}
 
-export default function RetailShowcase() {
+export default function RetailShowcase({
+  items,
+  imageSrc,
+  reverse = false,
+}: ShowcaseSectionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -37,7 +28,7 @@ export default function RetailShowcase() {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          setCurrentIndex((current) => (current + 1) % showcaseItems.length);
+          setCurrentIndex((current) => (current + 1) % items.length);
           return 0;
         }
         return prev + 100 / 80;
@@ -45,74 +36,72 @@ export default function RetailShowcase() {
     }, 100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [items.length]);
 
   return (
-    <div className="container">
-      <div>
-        <Card className="overflow-hidden p-6">
-          <div className="flex flex-col lg:flex-row">
-            {/* Image Section */}
-            <div className="lg:w-1/2 lg:pr-8">
-              <div className="bg-gray-100 rounded-lg overflow-hidden">
-                <Image
-                  src={images.progressBar}
-                  alt="Luxury perfume bottle"
-                  width={1000}
-                  height={1000}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Content Section */}
-            <div className="lg:w-1/2 lg:pl-8 mt-10 lg:mt-0">
-              <div className="space-y-8">
-                {showcaseItems.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`transition-all duration-500 ${
-                      index === currentIndex ? "opacity-100" : "opacity-40"
-                    }`}
-                  >
-                    <h3 className="text-lg font-semibold text-primary mb-3 leading-tight">
-                      {item.title}
-                    </h3>
-
-                    {/* Animate Description */}
-                    <AnimatePresence initial={false}>
-                      {index === currentIndex && (
-                        <motion.div
-                          key="description"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.5, ease: "easeInOut" }}
-                          className="overflow-hidden"
-                        >
-                          <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                            {item.description}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    {/* Progress Bar */}
-                    {index === currentIndex && (
-                      <div className="w-full h-1 bg-gray-200 rounded-full">
-                        <div
-                          className="h-full bg-primary rounded-full transition-all duration-100 ease-linear"
-                          style={{ width: `${progress}%` }}
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+    <div className="container mx-auto my-6  lg:my-14">
+      <Card className="overflow-hidden p-6">
+        <div className={`flex flex-col gap-6 ${reverse ? "lg:flex-row-reverse" : "lg:flex-row"}`}>
+          {/* Image Section */}
+          <div className="lg:w-1/2 lg:pr-4">
+            <div className="bg-gray-100 rounded-lg overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt="Showcase image"
+                width={900}
+                height={900}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-        </Card>
-      </div>
+
+          {/* Content Section */}
+          <div className="lg:w-1/2 lg:pl-6 mt-10 lg:mt-0">
+            <div className="space-y-8">
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className={`transition-all duration-500 ${
+                    index === currentIndex ? "opacity-100" : "opacity-40"
+                  }`}
+                >
+                  <h3 className="text-lg font-semibold text-primary mb-3 leading-tight">
+                    {item.title}
+                  </h3>
+
+                  {/* Animate Description */}
+                  <AnimatePresence initial={false}>
+                    {index === currentIndex && (
+                      <motion.div
+                        key="description"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                          {item.description}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Progress Bar */}
+                  {index === currentIndex && (
+                    <div className="w-full h-1 bg-gray-200 rounded-full">
+                      <div
+                        className="h-full bg-primary rounded-full transition-all duration-100 ease-linear"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Card>
     </div>
   );
 }

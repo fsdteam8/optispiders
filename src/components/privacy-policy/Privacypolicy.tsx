@@ -232,7 +232,7 @@ const Privacypolicy = () => {
           </div>
         </div>
 
-        <div className="contact-us mt-10 space-y-5">
+        <div className="contact-us mt-10 mb-10 space-y-5">
           <div className="mb-10">
             <p className=' text-[#063668] text-xl font-semibold'>Contact Us</p> 
           </div>

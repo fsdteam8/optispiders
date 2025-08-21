@@ -1,4 +1,4 @@
-import Stats from "@/app/_components/stats";
+import Stats from "@/app/(website)/_components/stats";
 import { images } from "@/constants/image";
 import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";

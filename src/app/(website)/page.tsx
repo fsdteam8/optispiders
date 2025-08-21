@@ -5,6 +5,9 @@ import { OurService } from "@/components/home/OurService";
 import RetailShowcase from "@/components/home/RetailShowcase";
 import TrustedBrands from "@/components/home/TrustedBrands";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import SmartAutomations from "@/components/smartautomatins/SmartAutomations";
+import VisibilityIntelligence from "@/components/visibiliyIntelligence/VisibilityIntelligence";
+
 
 export default function Home() {
   return (
@@ -16,6 +19,8 @@ export default function Home() {
       <OurProducts />
       <OurService />
       <ReadyToTransform />
+     <SmartAutomations />
+     <VisibilityIntelligence />
     </div>
   );
 }

@@ -1,5 +1,9 @@
 const Page = () => {
-  return <div>Page</div>;
+  return (
+    <section>
+      <div className="container mx-auto"></div>
+    </section>
+  );
 };
 
 export default Page;

@@ -20,13 +20,17 @@ import {
 } from "@/components/ui/sheet";
 import { images } from "@/constants/image";
 import { cn } from "@/lib/utils";
+import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import { ArrowRight, ChevronDown, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 import { products, serviceGroups, services } from "../../../utils/Navbar";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from "../ui/dropdown-menu";
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "../ui/dropdown-menu";
 
 export function Navbar() {
   const column1 = products.slice(0, 5);
@@ -190,8 +194,8 @@ export function Navbar() {
                   <DropdownMenuItem className="cursor-pointer" asChild>
                     <Link href="/about-us">About us</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer"asChild>
-                    <Link href="/contact-us">Contact us</Link>
+                  <DropdownMenuItem className="cursor-pointer" asChild>
+                    <Link href="/contact">Contact us</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className="cursor-pointer" asChild>
                     <Link href="/blogs">Blogs</Link>

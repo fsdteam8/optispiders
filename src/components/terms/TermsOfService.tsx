@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const TermsOfService = () => {
   return (
     <section>
@@ -258,6 +259,8 @@ const TermsOfService = () => {
           </div>
         </div>
       </div>
+
+
     </section>
   );
 };

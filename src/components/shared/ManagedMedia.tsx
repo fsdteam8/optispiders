@@ -30,8 +30,7 @@ export default function ManagedMedia({
 
           {/* Description */}
           <p
-            className="mx-auto mb-6 text-sm sm:text-base font-normal 
-            w-full sm:w-[90%] md:w-[80%] lg:w-[1396px]"
+            className="mx-auto mb-6 text-sm sm:text-base font-normal"
             style={{ color: "var(--Foundation-Grey-grey-900, #2F2F2F)" }}
           >
             {description}

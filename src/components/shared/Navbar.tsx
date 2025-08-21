@@ -20,133 +20,17 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { images } from "@/constants/image";
-
-const products = [
-  {
-    title: "Retail Media",
-    href: "/products/retail-media",
-    description: "Advanced retail media solutions for your business",
-  },
-  {
-    title: "Media Automation",
-    href: "/products/media-automation",
-    description: "Automated media management and optimization",
-  },
-  {
-    title: "Data Protection",
-    href: "/products/data-protection",
-    description: "Comprehensive data security and privacy solutions",
-  },
-  {
-    title: "Product Placement",
-    href: "/products/product-placement",
-    description: "Strategic product positioning and placement",
-  },
-  {
-    title: "Campaign Accelerator",
-    href: "/products/campaign-accelerator",
-    description: "Boost your marketing campaigns with AI",
-  },
-  {
-    title: "Content Optimization",
-    href: "/products/content-optimization",
-    description: "Optimize your content for maximum impact",
-  },
-  {
-    title: "Rich Media",
-    href: "/products/rich-media",
-    description: "Create engaging rich media experiences",
-  },
-  {
-    title: "Smart Classification",
-    href: "/products/smart-classification",
-    description: "AI-powered content classification",
-  },
-  {
-    title: "Insights Engine",
-    href: "/products/insights-engine",
-    description: "Deep analytics and business insights",
-  },
-  {
-    title: "Market Intelligence",
-    href: "/products/market-intelligence",
-    description: "Comprehensive market analysis and trends",
-  },
-  {
-    title: "Market Share",
-    href: "/products/market-share",
-    description: "Track and analyze market share data",
-  },
-  {
-    title: "Retail Insights",
-    href: "/products/retail-insights",
-    description: "Advanced retail analytics and insights",
-  },
-  {
-    title: "Digital Shelf",
-    href: "/products/digital-shelf",
-    description: "Optimize your digital shelf presence",
-  },
-];
-
-const services = [
-  {
-    title: "Paid Search",
-    href: "/services/paid-search",
-    description: "Professional paid search management",
-  },
-  {
-    title: "Retail Media Network",
-    href: "/services/retail-media-network",
-    description: "Comprehensive retail media network solutions",
-  },
-  {
-    title: "Optimization Metrics",
-    href: "/services/optimization-metrics",
-    description: "Advanced optimization and performance metrics",
-  },
-  {
-    title: "Retail Excellence",
-    href: "/services/retail-excellence",
-    description: "Achieve retail excellence with our expertise",
-  },
-  {
-    title: "Brand Protection",
-    href: "/services/brand-protection",
-    description: "Protect your brand across all channels",
-  },
-  {
-    title: "Fee Recovery",
-    href: "/services/fee-recovery",
-    description: "Recover fees and optimize costs",
-  },
-  {
-    title: "Product Page Content",
-    href: "/services/product-page-content",
-    description: "Optimize product page content for conversions",
-  },
-  {
-    title: "Retailer Brand Stores",
-    href: "/services/retailer-brand-stores",
-    description: "Build and manage retailer brand stores",
-  },
-  {
-    title: "Advertising Creative",
-    href: "/services/advertising-creative",
-    description: "Creative advertising solutions and design",
-  },
-  {
-    title: "Content Syndication Support",
-    href: "/services/content-syndication",
-    description: "Support for content syndication across platforms",
-  },
-];
+import { products, serviceGroups, services } from "../../../utils/Navbar";
 
 export function Navbar() {
+  const column1 = products.slice(0, 5);
+  const column2 = products.slice(5, 9);
+  const column3 = products.slice(9, 13);
+
   return (
     <header className="w-full bg-white">
       <div className="container flex h-16 py-3 items-center justify-between">
@@ -177,16 +61,63 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Products</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-3 p-4 md:grid-cols-3">
-                  {products.map((product) => (
-                    <ListItem
-                      key={product.title}
-                      title={product.title}
-                      href={product.href}
-                    >
-                      {product.description}
-                    </ListItem>
-                  ))}
+                <div className="grid w-[1000px] gap-6 p-6 md:grid-cols-3">
+                  {/* Column 1 */}
+                  <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
+                    {column1.map((product) => (
+                      <div
+                        key={product.title}
+                        className="flex items-start gap-2"
+                      >
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <a
+                            href={product.href}
+                            className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                          >
+                            {product.title}
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Column 2 */}
+                  <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
+                    {column2.map((product) => (
+                      <div
+                        key={product.title}
+                        className="flex items-start gap-2"
+                      >
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <a
+                            href={product.href}
+                            className="font-medium text-gray-900 hover:text-blue-600 transition-colors"
+                          >
+                            {product.title}
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Column 3 */}
+                  <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
+                    {column3.map((product) => (
+                      <div
+                        key={product.title}
+                        className="flex items-start gap-2"
+                      >
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <h1 className="font-medium text-gray-900 hover:text-blue-600 transition-colors">
+                            {product.title}
+                          </h1>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
@@ -194,16 +125,38 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[800px] gap-3 p-4 md:grid-cols-3">
-                  {services.map((service) => (
-                    <ListItem
-                      key={service.title}
-                      title={service.title}
-                      href={service.href}
-                    >
-                      {service.description}
-                    </ListItem>
-                  ))}
+                <div className="w-[1000px] p-6">
+                  <div className="grid grid-cols-3 gap-8">
+                    {serviceGroups.map((group) => (
+                      <div
+                        key={group.title}
+                        className="space-y-4 border border-primary/25 p-4 rounded-lg"
+                      >
+                        <Link
+                          href={group.href}
+                          className="flex items-center gap-2 text-lg font-semibold text-primary"
+                        >
+                          <span>{group.title}</span>
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+                        <ul className="space-y-3">
+                          {group.services.map((service) => (
+                            <li
+                              key={service.title}
+                              className="flex items-start gap-2"
+                            >
+                              <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                              <div>
+                                <h1 className="font-medium text-foreground hover:text-blue-600 transition-colors">
+                                  {service.title}
+                                </h1>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
@@ -282,13 +235,12 @@ export function Navbar() {
                   <h4 className="font-medium">Services</h4>
                   <div className="ml-4 flex flex-col space-y-2">
                     {services.slice(0, 6).map((service) => (
-                      <Link
+                      <h1
                         key={service.title}
-                        href={service.href}
                         className="text-sm text-foreground/70 transition-colors hover:text-foreground"
                       >
                         {service.title}
-                      </Link>
+                      </h1>
                     ))}
                   </div>
                 </div>

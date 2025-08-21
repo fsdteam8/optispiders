@@ -14,4 +14,5 @@ export const images = {
   logo10: "/brand/logo10.png",
   logo11: "/brand/logo11.png",
   logo12: "/brand/logo12.png",
+  progressBar: "/home/progress-bar.png"
 };

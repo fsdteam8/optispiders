@@ -1,0 +1,43 @@
+import { images } from "@/constants/image";
+
+export const brands = [
+  { name: "TheTradeDesk", logo: images.logo1 },
+  { name: "Mercado Libre", logo: images.logo2 },
+  { name: "Mops", logo: images.logo3 },
+  { name: "DoorDash", logo: images.logo4 },
+  { name: "Criteo", logo: images.logo5 },
+  { name: "TikTok Shop", logo: images.logo6 },
+  { name: "TheTradeDesk", logo: images.logo1 },
+  { name: "Mercado Libre", logo: images.logo2 },
+  { name: "Mops", logo: images.logo3 },
+  { name: "DoorDash", logo: images.logo4 },
+  { name: "Criteo", logo: images.logo5 },
+  { name: "TikTok Shop", logo: images.logo6 },
+  { name: "TheTradeDesk", logo: images.logo1 },
+  { name: "Mercado Libre", logo: images.logo2 },
+  { name: "Mops", logo: images.logo3 },
+  { name: "DoorDash", logo: images.logo4 },
+  { name: "Criteo", logo: images.logo5 },
+  { name: "TikTok Shop", logo: images.logo6 },
+];
+
+export const brandsRow2 = [
+  { name: "Amazon Advertising", logo: images.logo7 },
+  { name: "Shopee", logo: images.logo8 },
+  { name: "PromoteIQ", logo: images.logo9 },
+  { name: "Target", logo: images.logo10 },
+  { name: "Kroger", logo: images.logo11 },
+  { name: "Another", logo: images.logo12 },
+  { name: "Amazon Advertising", logo: images.logo7 },
+  { name: "Shopee", logo: images.logo8 },
+  { name: "PromoteIQ", logo: images.logo9 },
+  { name: "Target", logo: images.logo10 },
+  { name: "Kroger", logo: images.logo11 },
+  { name: "Another", logo: images.logo12 },
+  { name: "Amazon Advertising", logo: images.logo7 },
+  { name: "Shopee", logo: images.logo8 },
+  { name: "PromoteIQ", logo: images.logo9 },
+  { name: "Target", logo: images.logo10 },
+  { name: "Kroger", logo: images.logo11 },
+  { name: "Another", logo: images.logo12 },
+];

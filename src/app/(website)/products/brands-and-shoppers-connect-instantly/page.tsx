@@ -8,6 +8,7 @@ import products1 from "../../../../../public/product/products1.png";
 import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
 import RetailShowcase from "@/components/home/RetailShowcase";
 import { images } from "@/constants/image";
+import SmartAutomations from "@/components/smartautomatins/SmartAutomations";
 
 const itemsTwo = [
   {
@@ -53,7 +54,9 @@ const Page = () => {
         />
       </div>
 
-      {/*habib vai ai khane apnar section call korben  */} 
+      <SmartAutomations />
+
+
 
       <ServicePaidSearch
         title="Privacy-First Intelligence, Powered by OptiSpiders"

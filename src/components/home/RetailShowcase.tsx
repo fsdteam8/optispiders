@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
-import Image from "next/image";
 import { images } from "@/constants/image";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 interface ShowcaseItem {
   title: string;
@@ -39,7 +40,7 @@ export default function RetailShowcase() {
           setCurrentIndex((current) => (current + 1) % showcaseItems.length);
           return 0;
         }
-        return prev + 100 / 30;
+        return prev + 100 / 80;
       });
     }, 100);
 
@@ -51,18 +52,16 @@ export default function RetailShowcase() {
       <div>
         <Card className="overflow-hidden p-6">
           <div className="flex flex-col lg:flex-row">
-            {/* Image Section - 2x2 Grid */}
+            {/* Image Section */}
             <div className="lg:w-1/2 lg:pr-8">
-              <div>
-                <div className="bg-gray-100 rounded-lg overflow-hidden">
-                  <Image
-                    src={images.progressBar}
-                    alt="Luxury perfume bottle"
-                    width={1000}
-                    height={1000}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="bg-gray-100 rounded-lg overflow-hidden">
+                <Image
+                  src={images.progressBar}
+                  alt="Luxury perfume bottle"
+                  width={1000}
+                  height={1000}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
@@ -79,9 +78,26 @@ export default function RetailShowcase() {
                     <h3 className="text-lg font-semibold text-primary mb-3 leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {item.description}
-                    </p>
+
+                    {/* Animate Description */}
+                    <AnimatePresence initial={false}>
+                      {index === currentIndex && (
+                        <motion.div
+                          key="description"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.5, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                            {item.description}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Progress Bar */}
                     {index === currentIndex && (
                       <div className="w-full h-1 bg-gray-200 rounded-full">
                         <div

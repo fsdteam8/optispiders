@@ -6,12 +6,10 @@ import ReadyToTransform from "@/components/shared/ReadyToTransform";
 import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
 import RetailInsights from "../_components/RetailInsite";
 
- 
 export default function page() {
   return (
     <div>
       <Hero isStatsShow={false} />
- 
 
       <ServicePaidSearch
         title="Market Intelligence"
@@ -31,6 +29,16 @@ export default function page() {
 
       <RetailInsights />
 
+      <RatailMediaNetwork
+        toptext="Digital Shelf Intelligence"
+        title="Turn online impressions into measurable growth"
+        description="Your digital shelf is your brand’s storefront in the online marketplace—where shoppers discover, evaluate, and decide. At OptiSpiders, we transform that moment into opportunity.
+         <br /> <br /> Leverage our real-time visibility to monitor how your products perform across search, availability, and content. Identify what’s working, pinpoint gaps, and take data-backed action to boost conversions and outpace the competition. "
+        buttonText="Learn More"
+        buttonLink="/"
+        imageSrc="/reuseable/digitalShelf.png"
+        imageAlt="trun online impressions into measurable growth"
+      />
 
       <ReadyToTransform />
     </div>

@@ -5,8 +5,7 @@ import { OurService } from "@/components/home/OurService";
 import RetailShowcase from "@/components/home/RetailShowcase";
 import TrustedBrands from "@/components/home/TrustedBrands";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
-import SmartAutomations from "@/components/smartautomatins/SmartAutomations";
-import VisibilityIntelligence from "@/components/visibiliyIntelligence/VisibilityIntelligence";
+
 import { images } from "@/constants/image";
 
 const itemsOne = [
@@ -47,8 +46,6 @@ export default function Home() {
       <OurProducts />
       <OurService />
       <ReadyToTransform />
-     <SmartAutomations />
-     <VisibilityIntelligence />
     </div>
   );
 }

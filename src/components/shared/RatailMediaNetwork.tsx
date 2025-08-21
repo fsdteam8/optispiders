@@ -7,9 +7,11 @@ interface RatailMediaNetworkProps {
   buttonLink?: string;
   imageSrc: string;
   imageAlt: string;
+  toptext?: string; 
 }
 
 const RatailMediaNetwork = ({
+  toptext,
   title,
   description,
   buttonText,
@@ -18,14 +20,15 @@ const RatailMediaNetwork = ({
   imageAlt,
 }: RatailMediaNetworkProps) => {
   return (
-    <section className=" shadow-md bg-[#FAFAFA]">
-      <div className="container mx-auto py-20 ">
+    <section className=" shadow-md bg-[#FAFAFA] my-12">
+      <div className="container mx-auto py-12 ">
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-1/2">
-            <h2 className="text-[#063668] text-[32px] md:text-[32px] font-bold mb-6">
+            {toptext && ( <a href="/products/brands-and-shoppers-connect-instantly" className="text-[#007BFF] text[16px] font-normal mb-4 cursor-pointer">{toptext}</a>)}
+            <h2 className="text-[#063668] text-[24px] md:text-[32px] font-bold mb-6">
               {title}
             </h2>
-            <p className="text-xl md:text-[14px] font-normal text-[#2F2F2F] mb-12 leading-[120%]">
+            <p className="md:text-xl text-sm font-normal text-[#2F2F2F] mb-12 leading-[120%]">
               {description.includes("<br") ? (
                 <span dangerouslySetInnerHTML={{ __html: description }} />
               ) : (

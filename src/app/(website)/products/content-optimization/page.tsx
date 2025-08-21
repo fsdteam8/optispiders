@@ -4,6 +4,7 @@ import productsPage1 from "../../../../../public/product/productPage2_1.png";
 import productsPage3 from "../../../../../public/product/productPage2_3.png";
 import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import VisibilityIntelligence from "@/components/visibiliyIntelligence/VisibilityIntelligence";
 
 const Page = () => {
   return (
@@ -35,7 +36,8 @@ const Page = () => {
         link="#"
       />
 
-      {/* Habib vai Ai khane Page ta call korben----- call korar por comment remove kore diben */}
+      <VisibilityIntelligence />
+
 
       <ReadyToTransform />
     </div>

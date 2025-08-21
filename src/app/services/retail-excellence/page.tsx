@@ -4,7 +4,6 @@ import service_image_3 from "../../../../public/service/service_image_3.png";
 import { Globe } from "lucide-react";
 import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
 import ReuseableTwo from "@/components/shared/ReuseableTwo";
-import SyndicationSupport from "@/components/syndicationSupport/SyndicationSupport";
 import ReadyToTransform from "@/components/shared/ReadyToTransform";
 import Hero from "@/components/home/Hero";
 
@@ -44,9 +43,6 @@ const Page = () => {
         imageSrc="/Reuseabale/feerecovery.png"
         imageAlt="Optimization Metrics"
       />
-
-      <SyndicationSupport />
-
       <ReadyToTransform />
     </div>
   );

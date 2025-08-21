@@ -25,11 +25,11 @@ const Page = () => {
       />
 
       <RatailMediaNetwork
-        title="Brand Protection"
-        description="Your brand is your most asset and in today’s crowded digital shelves, it needs constant defense. We monitor listings for unauthorized sellers, pricing violations, inaccurate product details, and counterfeit activity. Our team acts quickly, identifies issues, corrects content, and maintains brand consistency, ensuring that your presence across the platform reflects your standards and values."
+        title="Retail Media Network"
+        description="Brand awareness drives long-term growth. Through programmatic display and video advertising across retail media networks, streaming services, and online video platforms, we help your brand stay top of mind. We target the right audiences by engaging creatively, controlling frequency to avoid ad fatigue, and constantly test and adjust campaigns to maximize engagement and performance. "
         buttonText="Learn More"
         buttonLink="/"
-        imageSrc="/Reuseabale/brandProtection.png"
+        imageSrc="/Reuseabale/image 89.png"
         imageAlt="Brand protection"
       />
 

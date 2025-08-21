@@ -1,5 +1,13 @@
+import ReadyToTransform from "@/components/shared/ReadyToTransform";
+import TermsOfService from "@/components/terms/TermsOfService";
+
 const Page = () => {
-  return <div>Terms of service</div>;
+  return (
+    <div>
+      <TermsOfService />
+      <ReadyToTransform />
+    </div>
+  );
 };
 
 export default Page;

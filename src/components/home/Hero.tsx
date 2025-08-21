@@ -4,7 +4,7 @@ import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 
-const Hero = () => {
+const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
   return (
     <div className="relative">
       <div
@@ -58,7 +58,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <Stats />
+      <div className={`${isStatsShow ? "" : "hidden"}`}>
+        <Stats />
+      </div>
     </div>
   );
 };

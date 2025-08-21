@@ -1,5 +1,14 @@
+
+import Privacypolicy from "@/components/privacy-policy/Privacypolicy";
+import ReadyToTransform from "@/components/shared/ReadyToTransform";
+
 const Page = () => {
-  return <div>Privacy Policy</div>;
+  return(
+    <div>
+      <Privacypolicy />
+      <ReadyToTransform />
+    </div>
+  )
 };
 
 export default Page;

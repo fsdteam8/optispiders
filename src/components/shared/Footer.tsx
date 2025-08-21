@@ -1,9 +1,112 @@
-import React from 'react'
+import Image from "next/image";
+import React from "react";
+import Logo from "../../../public/logo/logo.png";
 
+const quickLinks = [
+  { name: "Products", href: "/products" },
+  { name: "Services", href: "/services" },
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Contact Us", href: "/contact-us" },
+];
+
+const servicesLinks = [
+  { name: "Managed Media", href: "/services/managed-media" },
+  { name: "Retail Media Network", href: "/services/retail-media-network" },
+  { name: "Brand Protection", href: "/services/brand-protection" },
+  { name: "Fee Recovery", href: "/services/fee-recovery" },
+  { name: "Smart Automation", href: "/services/smart-automation" },
+  {
+    name: "Privacy-First Intelligence",
+    href: "/services/privacy-first-intelligence",
+  },
+];
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className="py-12">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
+          {/* Left Section - Newsletter */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <Image src={Logo} alt=""></Image>
+            </div>
 
-export default Footer
+            <p className="text-base text-[#707070] mb-5">
+              Commerce Collective Newsletter
+            </p>
+
+            <div className="flex mb-5">
+              <input
+                type="email"
+                placeholder="Work Email"
+                className="flex-1 px-3 py-4 border-2 rounded-l-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#2993D8]  border-[#2993D8]"
+              />
+              <button className="bg-[#2993D8]  text-white px-6 py-2 rounded-r-md text-sm font-medium transition-colors">
+                Subscribe
+              </button>
+            </div>
+
+            <p className="text-base text-[#707070] ">
+              By signing up you agree to the terms of our Privacy Policy and to
+              receive electronic communications from Flywheel.
+            </p>
+          </div>
+
+          {/* Quick Links Section */}
+          <div className="flex justify-start md:justify-center lg:justify-end mb-8 md:mb-0">
+            <div className="flex flex-col md:items-center lg:items-start">
+              <h3 className="text-xl font-medium text-[#707070] mb-5">
+                Quick Links
+              </h3>
+              <ul className="space-y-3 text-start md:text-center lg:text-start">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <a href={link.href} className="text-base text-[#707070]">
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Services Section */}
+          <div className="flex justify-start md:justify-center lg:justify-end">
+            <div className="flex flex-col md:items-center lg:items-start">
+              <h3 className="text-xl font-medium text-[#707070] mb-5">
+                Services
+              </h3>
+              <ul className="space-y-3 text-start md:text-center lg:text-start">
+                {servicesLinks.map((service, index) => (
+                  <li key={index}>
+                    <a href={service.href} className="text-base text-[#707070]">
+                      {service.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Section - Copyright */}
+        <div className="mt-12 pt-8 border-t border-[#D9D9D94D] flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-sm text-[#707070]">
+            © 2025 Opti Spiders. All rights reserved.
+          </p>
+          <div className="flex space-x-6">
+            <a href="#" className="text-sm text-[#707070]">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-sm text-[#707070]">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

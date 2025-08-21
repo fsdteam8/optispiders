@@ -7,6 +7,11 @@ import ReadyToTransform from "@/components/shared/ReadyToTransform";
 
 const Page = () => {
   return (
+<<<<<<< HEAD
+    <section>
+      <div className="container mx-auto"></div>
+    </section>
+=======
     <div>
       <Hero isStatsShow={false} />
 
@@ -39,6 +44,7 @@ const Page = () => {
 
       <ReadyToTransform />
     </div>
+>>>>>>> bc37c11d79f8bc281b269938b92d8b614f436b8e
   );
 };
 

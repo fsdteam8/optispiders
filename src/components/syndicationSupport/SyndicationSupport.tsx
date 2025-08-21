@@ -5,7 +5,7 @@ const SyndicationSupport = () => {
   return (
     <section>
       <div className="container mx-auto my-32">
-        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
+        <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-[60%]">
             <h2 className="text-[#063668] text-[32px] md:text-[48px] font-bold mb-4">
               Content Syndication Support
@@ -23,7 +23,7 @@ const SyndicationSupport = () => {
               Learn more →
             </button>
           </div>
-          <div className="md:w-[30%] mt-10 md:mt-0">
+          <div className="md:w-[30%] w-[80%] mx-auto md:mx-0  md:mt-0">
             <Image
               src={"/Reuseabale/syndication.png"}
               alt="syndication support"

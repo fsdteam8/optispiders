@@ -17,7 +17,7 @@ const ReuseableTwo = ({
   imageAlt,
 }:ReuseableTwoProps) => {
   return (
-    <section className="shadow-md bg-[#F9F9F9]">
+    <section className="shadow-md bg-white">
       <div className="container mx-auto py-16">
         <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-[35%] mt-10 md:mt-0">

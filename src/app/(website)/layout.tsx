@@ -9,7 +9,9 @@ interface Props {
 const WebsiteLayout = ({ children }: Props) => {
   return (
     <div>
-      <Navbar />
+      <header className="sticky top-0 z-50 ">
+        <Navbar />
+      </header>
       {children}
       <Footer />
     </div>

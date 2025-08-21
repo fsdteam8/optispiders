@@ -1,7 +1,5 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -20,10 +18,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ArrowRight, Menu } from "lucide-react";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { images } from "@/constants/image";
+import { cn } from "@/lib/utils";
+import { ArrowRight, Menu } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 import { products, serviceGroups, services } from "../../../utils/Navbar";
 
 export function Navbar() {
@@ -61,9 +61,9 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Products</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="grid w-[1000px] gap-6 p-6 md:grid-cols-3">
+                <div className="grid w-[1000px] gap-6 p-6 md:grid-cols-3  min-w-[1000px] ">
                   {/* Column 1 */}
-                  <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
+                  <div className="space-y-3 border border-gray/25 p-4 rounded-lg">
                     {column1.map((product) => (
                       <div
                         key={product.title}
@@ -125,29 +125,29 @@ export function Navbar() {
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="w-[1000px] p-6">
-                  <div className="grid grid-cols-3 gap-8">
+                <div className="w-full min-w-[1000px] p-6">
+                  <div className="grid grid-cols-3 gap-5">
                     {serviceGroups.map((group) => (
                       <div
                         key={group.title}
-                        className="space-y-4 border border-primary/25 p-4 rounded-lg"
+                        className="space-y-4 border border-gray/25 p-4 rounded-lg w-auto"
                       >
                         <Link
                           href={group.href}
                           className="flex items-center gap-2 text-lg font-semibold text-primary"
                         >
-                          <span>{group.title}</span>
+                          <span className="font-medium ">{group.title}</span>
                           <ArrowRight className="h-4 w-4" />
                         </Link>
                         <ul className="space-y-3">
                           {group.services.map((service) => (
                             <li
                               key={service.title}
-                              className="flex items-start gap-2"
+                              className="flex items-start gap-2 font-"
                             >
                               <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                               <div>
-                                <h1 className="font-medium text-foreground hover:text-blue-600 transition-colors">
+                                <h1 className="font-light text-foreground hover:text-blue-600 transition-colors">
                                   {service.title}
                                 </h1>
                               </div>

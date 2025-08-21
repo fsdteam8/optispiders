@@ -26,7 +26,7 @@ const itemsTwo = [
       "Gain real-time, holistic visibility across your retail media universe with OptiSpiders’ custom reporting suite. Effortlessly segment, filter, and visualize your performance data across every retailer and channel—infinitely customizable to match your internal reporting needs. Build, save, and share dashboards that fit your business, not the other way around.",
   },
 ];
-
+ 
 const Page = () => {
   return (
     <div className="bg-[#FAFAFA]">

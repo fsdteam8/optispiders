@@ -52,7 +52,7 @@ export default function RetailShowcase() {
         <Card className="overflow-hidden p-6">
           <div className="flex flex-col lg:flex-row">
             {/* Image Section - 2x2 Grid */}
-            <div className="lg:w-1/2 pr-8">
+            <div className="lg:w-1/2 lg:pr-8">
               <div>
                 <div className="bg-gray-100 rounded-lg overflow-hidden">
                   <Image
@@ -67,7 +67,7 @@ export default function RetailShowcase() {
             </div>
 
             {/* Content Section */}
-            <div className="lg:w-1/2 pl-8">
+            <div className="lg:w-1/2 lg:pl-8 mt-10 lg:mt-0">
               <div className="space-y-8">
                 {showcaseItems.map((item, index) => (
                   <div

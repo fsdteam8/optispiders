@@ -1,4 +1,5 @@
 "use client";
+import { leadCollectAction } from "@/actions/lead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -13,30 +14,12 @@ import {
 import { Input } from "@/components/ui/input";
 import LocationSelector from "@/components/ui/location-input";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { leadFormSchema, LeadFormValues } from "@/schemas/lead";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-const formSchema = z.object({
-  firstName: z.string().min(1),
-  lastName: z.string().min(1),
-  email: z.string().min(1),
-  phone: z.string(),
-  companyName: z.string().min(1),
-  jobTitle: z.string().min(1),
-  country: z.tuple([z.string().min(1), z.string().optional()]),
-  terms: z.boolean().refine((val) => val === true, {
-    message: "You must accept the terms and conditions",
-  }),
-
-  retailers: z
-    .array(z.string())
-    .min(1, "Please select at least one retailer")
-    .refine((value) => value.some((item) => item), {
-      message: "You have to select at least one retailer.",
-    }),
-});
+import { toast } from "sonner";
 
 const retailers = [
   { id: "amazon", label: "Amazon" },
@@ -52,17 +35,29 @@ export default function ContactForm() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setCountryName] = useState<string>("");
   const [stateName, setStateName] = useState<string>("");
+  const [isPending, startTransition] = useTransition();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<LeadFormValues>({
+    resolver: zodResolver(leadFormSchema),
     defaultValues: {
       retailers: [],
       terms: false,
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  function onSubmit(values: LeadFormValues) {
+    startTransition(() => {
+      leadCollectAction(values).then((res) => {
+        if (!res.success) {
+          toast.error(res.message);
+          return;
+        }
+
+        // handle success
+        toast.success(res.message);
+        form.reset();
+      });
+    });
   }
 
   return (
@@ -291,7 +286,10 @@ export default function ContactForm() {
               )}
             />
             <div className="flex justify-end">
-              <Button type="submit">Submit Request</Button>
+              <Button type="submit" disabled={isPending}>
+                Submit Request{" "}
+                {isPending && <Loader2 className="animate-spin" />}
+              </Button>
             </div>
           </form>
         </Form>

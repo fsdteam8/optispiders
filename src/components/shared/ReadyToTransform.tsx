@@ -7,7 +7,7 @@ import { LuShield } from "react-icons/lu";
 const ReadyToTransform = () => {
   return (
     <section className='ReadyToTransform bg-[#063668] w-full h-auto'>
-        <div className="container font-inter">
+        <div className="container mx-auto font-inter">
             <div className="py-20 text-center">
                 <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-semibold mb-5">
                     Ready to Transform Your Digital Commerce?

@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/prisma";
 import { leadFormSchema, LeadFormValues } from "@/schemas/lead";
+import { revalidatePath } from "next/cache";
 
 export async function leadCollectAction(data: LeadFormValues) {
   try {
@@ -49,7 +50,7 @@ export async function leadCollectAction(data: LeadFormValues) {
         jobTitle,
         phone,
         terms,
-        country: country[0],
+        country: country[0] ?? "",
         state: country[1],
         retailers,
       },
@@ -65,6 +66,48 @@ export async function leadCollectAction(data: LeadFormValues) {
       success: false,
       message:
         "Something went wrong while submitting your lead. Please try again later.",
+    };
+  }
+}
+
+export async function deleteLeadAction(leadId: string) {
+  try {
+    if (!leadId) {
+      return {
+        success: false,
+        message: "Lead ID is required.",
+      };
+    }
+
+    // ✅ Check if lead exists
+    const lead = await prisma.lead.findUnique({
+      where: { id: leadId },
+    });
+
+    if (!lead) {
+      return {
+        success: false,
+        message: "Lead not found.",
+      };
+    }
+
+    // ✅ Delete lead
+    await prisma.lead.delete({
+      where: { id: leadId },
+    });
+
+    revalidatePath("/dashboard");
+
+    return {
+      success: true,
+      message: "Lead deleted successfully.",
+    };
+  } catch (error) {
+    console.error("Delete lead error:", error);
+    return {
+      success: false,
+      message:
+        "Something went wrong while deleting the lead. Please try again later.",
     };
   }
 }

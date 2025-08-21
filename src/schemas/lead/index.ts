@@ -7,7 +7,14 @@ export const leadFormSchema = z.object({
   phone: z.string(),
   companyName: z.string().min(1),
   jobTitle: z.string().min(1),
-  country: z.tuple([z.string().min(1), z.string().optional()]),
+
+  // Country can be empty initially (for reset), but validated on submit
+  country: z
+    .tuple([z.string().optional(), z.string().optional()])
+    .refine((val) => val[0] && val[0].trim().length > 0, {
+      message: "Please select a country",
+    }),
+
   terms: z.boolean().refine((val) => val === true, {
     message: "You must accept the terms and conditions",
   }),

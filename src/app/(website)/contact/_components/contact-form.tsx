@@ -55,7 +55,17 @@ export default function ContactForm() {
 
         // handle success
         toast.success(res.message);
-        form.reset();
+        form.reset({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          companyName: "",
+          jobTitle: "",
+          retailers: [],
+          terms: false,
+          country: ["", ""], // reset both parts
+        });
       });
     });
   }

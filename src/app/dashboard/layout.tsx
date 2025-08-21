@@ -1,3 +1,5 @@
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 import { ReactNode } from "react";
 import Sidebar from "./_components/sidebar";
 import Topbar from "./_components/top-bar";
@@ -6,7 +8,11 @@ interface Props {
   children: ReactNode;
 }
 
-const LayouDashboardLayout = ({ children }: Props) => {
+const LayouDashboardLayout = async ({ children }: Props) => {
+  const session = await auth();
+  const isLoggedin = !!session;
+
+  if (!isLoggedin) redirect("/login");
   return (
     <div className="flex min-h-screen flex-col">
       <Sidebar />

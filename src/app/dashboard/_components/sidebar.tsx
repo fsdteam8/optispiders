@@ -3,12 +3,14 @@
 const AlertModal = dynamic(() => import("@/components/ui/alert-modal"), {
   ssr: false,
 });
+import { logoutAction } from "@/actions/auth/logout";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, LogOut, Users } from "lucide-react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useTransition } from "react";
+import { toast } from "sonner";
 
 const routes = [
   {
@@ -27,16 +29,23 @@ const routes = [
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const pathname = usePathname();
 
-  const onLogout = () => {};
+  const onLogout = () => {
+    startTransition(() => {
+      logoutAction().then((res) => {
+        if (!res.success) {
+          toast.error(res.message);
+          return;
+        }
 
-  //   useEffect(() => {
-  //     return () => {
-  //       setIsLoading(false);
-  //     };
-  //   }, []);
+        router.push("/");
+      });
+    });
+  };
 
   return (
     <>
@@ -98,7 +107,7 @@ const Sidebar = () => {
         isOpen={open}
         onClose={() => setOpen(false)}
         onConfirm={onLogout}
-        loading={false}
+        loading={isPending}
         title="Are you sure you want to log out?"
         message=""
       />

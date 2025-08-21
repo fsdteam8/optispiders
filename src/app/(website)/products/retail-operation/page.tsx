@@ -28,6 +28,10 @@ export default function page() {
         imageAlt="Market Share"
       />
 
+      {/* if vai ai khane  Retail Insghts component*/}
+
+      {/* if vai Turn online impressions into measurable growth component call kore diben ai khane */}
+
       <ReadyToTransform />
     </div>
   );

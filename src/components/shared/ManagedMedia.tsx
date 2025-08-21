@@ -14,7 +14,7 @@ export default function ManagedMedia({
   description,
 }: ManagedMediaProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-32  rounded-lg flex justify-center bg-[#FAFAFA] ">
+    <section className="py-16 md:py-24 lg:py-24  rounded-lg flex justify-center bg-[#FAFAFA] ">
       <div className="shadow-[0_4px_8px_0_rgba(0,0,0,0.10)] w-full bg-[#FFF]">
         <div className="text-center px-4 sm:px-6 lg:px-6 container mx-auto">
           {/* Small Top Text */}
@@ -30,7 +30,7 @@ export default function ManagedMedia({
 
           {/* Description */}
           <p
-            className="mx-auto mb-6 text-sm sm:text-base font-normal"
+            className="mx-auto mb-6 text-sm sm:text-base font-normal" 
             style={{ color: "var(--Foundation-Grey-grey-900, #2F2F2F)" }}
           >
             {description}

@@ -23,14 +23,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "antialiased")}>
         <main>
-          {/* <header className="sticky top-0 z-50 ">
-            <Navbar />
-          </header> */}
           <div>{children}</div>
           <Toaster />
-          {/* <footer>
-            <Footer />
-          </footer> */}
         </main>
       </body>
     </html>

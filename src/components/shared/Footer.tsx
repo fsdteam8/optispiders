@@ -3,27 +3,29 @@ import React from "react";
 import Logo from "../../../public/logo/logo.png";
 
 const quickLinks = [
-  "Products",
-  "Services",
-  "Case Studies",
-  "About Us",
-  "Contact Us",
+  { name: "Products", href: "/products" },
+  { name: "Services", href: "/services" },
+  { name: "Case Studies", href: "/case-studies" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 const servicesLinks = [
-  "Managed Media",
-  "Retail Media Network",
-  "Brand Protection",
-  "Fee Recovery",
-  "Smart Automation",
-  "Privacy-First Intelligence",
+  { name: "Managed Media", href: "/services/managed-media" },
+  { name: "Retail Media Network", href: "/services/retail-media-network" },
+  { name: "Brand Protection", href: "/services/brand-protection" },
+  { name: "Fee Recovery", href: "/services/fee-recovery" },
+  { name: "Smart Automation", href: "/services/smart-automation" },
+  {
+    name: "Privacy-First Intelligence",
+    href: "/services/privacy-first-intelligence",
+  },
 ];
-
 const Footer = () => {
   return (
     <footer className="py-12">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {/* Left Section - Newsletter */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -52,16 +54,16 @@ const Footer = () => {
           </div>
 
           {/* Quick Links Section */}
-          <div className="justify-start lg:justify-end">
-            <div className="flex flex-col lg:items-center">
+          <div className="flex justify-start md:justify-center lg:justify-end mb-8 md:mb-0">
+            <div className="flex flex-col md:items-center lg:items-start">
               <h3 className="text-xl font-medium text-[#707070] mb-5">
                 Quick Links
               </h3>
-              <ul className="space-y-3 text-start">
+              <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href="#" className="text-base text-[#707070] ">
-                      {link}
+                    <a href={link.href} className="text-base text-[#707070]">
+                      {link.name}
                     </a>
                   </li>
                 ))}
@@ -70,16 +72,16 @@ const Footer = () => {
           </div>
 
           {/* Services Section */}
-          <div className="flex lg:justify-end">
-            <div className="flex flex-col">
+          <div className="flex justify-start md:justify-center lg:justify-end">
+            <div className="flex flex-col md:items-center lg:items-start">
               <h3 className="text-xl font-medium text-[#707070] mb-5">
                 Services
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {servicesLinks.map((service, index) => (
                   <li key={index}>
-                    <a href="#" className="text-base text-[#707070]">
-                      {service}
+                    <a href={service.href} className="text-base text-[#707070]">
+                      {service.name}
                     </a>
                   </li>
                 ))}

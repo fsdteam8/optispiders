@@ -11,12 +11,14 @@ import { Lead } from "@prisma/client";
 import { EllipsisVertical } from "lucide-react";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
+import ContactViewModal from "./contact-view-modal";
 
 interface Props {
   data: Lead;
 }
 
 const ContactAction = ({ data }: Props) => {
+  const [modalOpen, setModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -42,7 +44,9 @@ const ContactAction = ({ data }: Props) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem>View</DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setModalOpen(true)}>
+            View
+          </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setOpen((p) => !p)}>
             Delete
           </DropdownMenuItem>
@@ -57,6 +61,7 @@ const ContactAction = ({ data }: Props) => {
         title="Are you sure you want to delete"
         message=""
       />
+      <ContactViewModal open={modalOpen} setOpen={setModalOpen} data={data} />
     </div>
   );
 };

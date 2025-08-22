@@ -1,12 +1,11 @@
-'use client'
+"use client";
 
-import HeroBannerTwo from '@/components/shared/Banner'
-import React from 'react'
-import { useRouter } from 'next/navigation'
-import Image from 'next/image'
+import HeroBannerTwo from "@/components/shared/Banner";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const ProductsBanner = () => {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div>
@@ -22,14 +21,15 @@ export const ProductsBanner = () => {
             className="w-4 h-4"
           />
         }
+        imageSrc="/reuseable/hero-banner.png"
         heading="Uncover Every Product, Ignite Every Campaign."
         description="Explore your complete catalog—AI-tuned by OptiSpiders for peak performance on every digital shelf. Spot trends, track top converters, and find the perfect picks for your next campaign."
         //Navigate to /home and /services
-        onPrimaryBtnClick={() => router.push('/services/managed-media')}
+        onPrimaryBtnClick={() => router.push("/services/managed-media")}
         onSecondaryBtnClick={() =>
-          router.push('/products/brands-and-shoppers-connect-instantly')
+          router.push("/products/brands-and-shoppers-connect-instantly")
         }
       />
     </div>
-  )
-}
+  );
+};

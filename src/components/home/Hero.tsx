@@ -1,8 +1,8 @@
-import Stats from '@/app/(website)/_components/stats'
-import { images } from '@/constants/image'
-import { ArrowRight, Star } from 'lucide-react'
-import Image from 'next/image'
-import { Button } from '../ui/button'
+import Stats from "@/app/(website)/_components/stats";
+import { images } from "@/constants/image";
+import { ArrowRight, Star } from "lucide-react";
+import Image from "next/image";
+import { Button } from "../ui/button";
 
 const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
   return (
@@ -10,7 +10,7 @@ const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
       <div
         className="relative min-h-[70vh] h-auto py-[100px] text-white flex flex-col items-center justify-center bg-center bg-cover bg-primary"
         style={{
-          backgroundImage: `url(https://files.edgestore.dev/l2c0thic6lofxtc5/optispiders/_public/banner.webp)`,
+          backgroundImage: `url(https://files.edgestore.dev/rzoslohhv2lk81i6/optispiders/_public/banner.webp)`,
         }}
       >
         {/* Overlay layer */}
@@ -24,7 +24,7 @@ const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
             </h1>
 
             <h1 className="my-5 text-4xl font-semibold max-w-2xl">
-              Dominate the <span className="text-blue-500">digital shelf</span>{' '}
+              Dominate the <span className="text-blue-500">digital shelf</span>{" "}
               with <span className="text-blue-500">AI-powered</span> solutions.
             </h1>
 
@@ -58,11 +58,11 @@ const Hero = ({ isStatsShow }: { isStatsShow: boolean }) => {
           </div>
         </div>
       </div>
-      <div className={`${isStatsShow ? '' : 'hidden'}`}>
+      <div className={`${isStatsShow ? "" : "hidden"}`}>
         <Stats />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

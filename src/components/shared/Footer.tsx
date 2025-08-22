@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Logo from "../../../public/logo/logo.png";
+import NewsLetterForm from "./news-letter-form";
 
 const quickLinks = [
   { name: "Products", href: "/products" },
@@ -35,16 +36,7 @@ const Footer = () => {
               Commerce Collective Newsletter
             </p>
 
-            <div className="flex mb-5">
-              <input
-                type="email"
-                placeholder="Work Email"
-                className="flex-1 px-3 py-2 border-2 rounded-l-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#2993D8]  border-[#2993D8]"
-              />
-              <button className="bg-[#2993D8]  text-white px-6 py-2 rounded-r-md text-sm font-medium transition-colors">
-                Subscribe
-              </button>
-            </div>
+            <NewsLetterForm />
 
             <p className="text-[14px] md:text-base text-[#707070] ">
               By signing up you agree to the terms of our Privacy Policy and to

@@ -1,13 +1,12 @@
 'use client'
 
 import HeroBannerTwo from '@/components/shared/Banner'
-import React from 'react'
-import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import React from 'react'
 
-export const ProductsBanner = () => {
+export const ServiceBanner = () => {
   const router = useRouter()
-
   return (
     <div>
       <HeroBannerTwo
@@ -22,8 +21,8 @@ export const ProductsBanner = () => {
             className="w-4 h-4"
           />
         }
-        heading="Uncover Every Product, Ignite Every Campaign."
-        description="Explore your complete catalog—AI-tuned by OptiSpiders for peak performance on every digital shelf. Spot trends, track top converters, and find the perfect picks for your next campaign."
+        heading="Maximize Your Potential with Opti Spiders Expert Solutions."
+        description="Discover our complete range of AI-driven, privacy-focused retail media solutions—offering everything from smart ad placements to automated content optimization. Built to grow your brand with speed, accuracy, and total control."
         //Navigate to /home and /services
         onPrimaryBtnClick={() => router.push('/services/managed-media')}
         onSecondaryBtnClick={() =>

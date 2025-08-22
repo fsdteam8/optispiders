@@ -1,26 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "../../../public/logo/logo.png";
 import NewsLetterForm from "./news-letter-form";
 
 const quickLinks = [
-  { name: "Products", href: "/products" },
-  { name: "Services", href: "/services" },
-  { name: "Case Studies", href: "/case-studies" },
+  { name: "Products", href: "/products/brands-and-shoppers-connect-instantly" },
+  { name: "Services", href: "/services/managed-media" },
+  // { name: 'Case Studies', href: '/case-studies' },
   { name: "About Us", href: "/about-us" },
   { name: "Contact Us", href: "/contact-us" },
 ];
 
 const servicesLinks = [
   { name: "Managed Media", href: "/services/managed-media" },
-  { name: "Retail Media Network", href: "/services/retail-media-network" },
-  { name: "Brand Protection", href: "/services/brand-protection" },
-  { name: "Fee Recovery", href: "/services/fee-recovery" },
-  { name: "Smart Automation", href: "/services/smart-automation" },
-  {
-    name: "Privacy-First Intelligence",
-    href: "/services/privacy-first-intelligence",
-  },
+  // { name: 'Retail Media Network', href: '/services/retail-media-network' },
+  // { name: 'Brand Protection', href: '/services/brand-protection' },
+  // { name: 'Fee Recovery', href: '/services/fee-recovery' },
+  // { name: 'Smart Automation', href: '/services/smart-automation' },
+  // {
+  //   name: 'Privacy-First Intelligence',
+  //   href: '/services/privacy-first-intelligence',
+  // },
 ];
+
 const Footer = () => {
   return (
     <footer className="py-12">
@@ -29,7 +31,7 @@ const Footer = () => {
           {/* Left Section - Newsletter */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Image src={Logo} alt="Logo" />
+              <Image src={Logo} alt="Opti Spiders Logo" />
             </div>
 
             <p className="text-base text-[#707070] mb-5">
@@ -53,12 +55,9 @@ const Footer = () => {
               <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href={link.href}
-                      className="text-base text-[#707070] hover:text-primary duration-300 transition-colors"
-                    >
+                    <Link href={link.href} className="text-base text-[#707070]">
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -74,12 +73,12 @@ const Footer = () => {
               <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {servicesLinks.map((service, index) => (
                   <li key={index}>
-                    <a
+                    <Link
                       href={service.href}
-                      className="text-base text-[#707070] hover:text-primary duration-300 transition-colors"
+                      className="text-base text-[#707070]"
                     >
                       {service.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -93,12 +92,12 @@ const Footer = () => {
             © 2025 Opti Spiders. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-sm text-[#707070]">
+            <Link href="/privacy-policy" className="text-sm text-[#707070]">
               Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-[#707070]">
+            </Link>
+            <Link href="/terms-of-service" className="text-sm text-[#707070]">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -6,21 +6,21 @@ import Link from 'next/link'
 const quickLinks = [
   { name: 'Products', href: '/products/brands-and-shoppers-connect-instantly' },
   { name: 'Services', href: '/services/managed-media' },
-  { name: 'Case Studies', href: '/case-studies' },
+  // { name: 'Case Studies', href: '/case-studies' },
   { name: 'About Us', href: '/about-us' },
   { name: 'Contact Us', href: '/contact-us' },
 ]
 
 const servicesLinks = [
   { name: 'Managed Media', href: '/services/managed-media' },
-  { name: 'Retail Media Network', href: '/services/retail-media-network' },
-  { name: 'Brand Protection', href: '/services/brand-protection' },
-  { name: 'Fee Recovery', href: '/services/fee-recovery' },
-  { name: 'Smart Automation', href: '/services/smart-automation' },
-  {
-    name: 'Privacy-First Intelligence',
-    href: '/services/privacy-first-intelligence',
-  },
+  // { name: 'Retail Media Network', href: '/services/retail-media-network' },
+  // { name: 'Brand Protection', href: '/services/brand-protection' },
+  // { name: 'Fee Recovery', href: '/services/fee-recovery' },
+  // { name: 'Smart Automation', href: '/services/smart-automation' },
+  // {
+  //   name: 'Privacy-First Intelligence',
+  //   href: '/services/privacy-first-intelligence',
+  // },
 ]
 
 const Footer = () => {

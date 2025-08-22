@@ -49,31 +49,6 @@ export function FileUploader({
     }
   }, [value]);
 
-  // const handleUpload = async (selectedFile: File) => {
-  //   setFile(selectedFile);
-  //   setFileName(selectedFile.name);
-  //   setUploading(true);
-  //   setUploadProgress(0);
-
-  //   try {
-  //     const res = await edgestore.publicFiles.upload({
-  //       file: selectedFile,
-  //       options: {
-  //         ...(value && { replaceTargetUrl: value }),
-  //       },
-  //       onProgressChange: (progress) => {
-  //         setUploadProgress(progress);
-  //       },
-  //     });
-
-  //     onChange(res.url);
-  //     setUploading(false);
-  //   } catch (error) {
-  //     console.error("Error uploading file:", error);
-  //     setUploading(false);
-  //   }
-  // };
-
   const onDrop = useCallback(
     async (acceptedFiles: File[]) => {
       if (acceptedFiles.length === 0) return;

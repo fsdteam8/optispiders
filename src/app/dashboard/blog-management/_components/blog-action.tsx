@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Blog } from "@prisma/client";
 import { EllipsisVertical } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
 
@@ -19,6 +20,7 @@ interface Props {
 const ContactAction = ({ data }: Props) => {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
 
   const onDelete = () => {
     startTransition(() => {
@@ -42,7 +44,13 @@ const ContactAction = ({ data }: Props) => {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem>Edit</DropdownMenuItem>
+          <DropdownMenuItem
+            onClick={() =>
+              router.push(`/dashboard/blog-management/edit/${data.id}`)
+            }
+          >
+            Edit
+          </DropdownMenuItem>
           <DropdownMenuItem onClick={() => setOpen((p) => !p)}>
             Delete
           </DropdownMenuItem>

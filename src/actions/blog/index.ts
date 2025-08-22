@@ -80,3 +80,40 @@ export async function deleteBlogAction(id: string): Promise<ActionResponse> {
     };
   }
 }
+
+export async function editBlogAction(
+  id: string,
+  values: BlogSchemaValue
+): Promise<ActionResponse> {
+  try {
+    // Validate incoming values
+    const parsed = blogSchema.safeParse(values);
+    if (!parsed.success) {
+      return {
+        success: false,
+        message: parsed.error.message,
+      };
+    }
+
+    // Update blog entry
+    await prisma.blog.update({
+      where: { id },
+      data: parsed.data,
+    });
+
+    // Revalidate dashboard path
+    revalidatePath("/dashboard/blog-management");
+
+    return {
+      success: true,
+      message: "Blog updated successfully",
+    };
+  } catch (error) {
+    console.error("Error updating blog:", error);
+
+    return {
+      success: false,
+      message: "An unexpected error occurred while updating the blog.",
+    };
+  }
+}

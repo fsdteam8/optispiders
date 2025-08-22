@@ -1,3 +1,4 @@
+import { EdgeStoreProvider } from "@/lib/edgestore";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -23,8 +24,10 @@ export default async function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, "antialiased")}>
         <main>
-          <div>{children}</div>
-          <Toaster />
+          <EdgeStoreProvider>
+            <div>{children}</div>
+            <Toaster />
+          </EdgeStoreProvider>
         </main>
       </body>
     </html>

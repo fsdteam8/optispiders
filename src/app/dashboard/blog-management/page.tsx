@@ -7,9 +7,16 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { prisma } from "@/lib/prisma";
 import Link from "next/link";
+import BlogManagementContainer from "./_components/blog-management-container";
 
-const Page = () => {
+const Page = async () => {
+  const data = await prisma.blog.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
   return (
     <Card>
       <CardHeader>
@@ -34,7 +41,9 @@ const Page = () => {
         </section>
       </CardHeader>
 
-      <CardContent>df</CardContent>
+      <CardContent>
+        <BlogManagementContainer data={data} />
+      </CardContent>
     </Card>
   );
 };

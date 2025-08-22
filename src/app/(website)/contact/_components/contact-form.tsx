@@ -76,10 +76,10 @@ export default function ContactForm() {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8 max-w-3xl mx-auto py-10"
+            className="space-y-8 max-w-4xl mx-auto p-0 md:py-10"
           >
-            <div className="grid grid-cols-12 gap-4">
-              <div className="col-span-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
                 <FormField
                   control={form.control}
                   name="firstName"
@@ -96,7 +96,7 @@ export default function ContactForm() {
                 />
               </div>
 
-              <div className="col-span-6">
+              <div>
                 <FormField
                   control={form.control}
                   name="lastName"
@@ -114,8 +114,8 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-12 gap-4">
-              <div className="col-span-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
                 <FormField
                   control={form.control}
                   name="email"
@@ -132,7 +132,7 @@ export default function ContactForm() {
                 />
               </div>
 
-              <div className="col-span-6">
+              <div>
                 <FormField
                   control={form.control}
                   name="phone"
@@ -154,8 +154,8 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="grid grid-cols-12 gap-4">
-              <div className="col-span-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
                 <FormField
                   control={form.control}
                   name="companyName"
@@ -172,7 +172,7 @@ export default function ContactForm() {
                 />
               </div>
 
-              <div className="col-span-6">
+              <div>
                 <FormField
                   control={form.control}
                   name="jobTitle"

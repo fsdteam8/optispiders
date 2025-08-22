@@ -7,10 +7,12 @@ import { logoutAction } from "@/actions/auth/logout";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard, LogOut, Users } from "lucide-react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
 import { toast } from "sonner";
+import Logo from "../../../../public/logo/logo.png";
 
 const routes = [
   {
@@ -53,9 +55,8 @@ const Sidebar = () => {
         <div className="flex h-full flex-col">
           {/* Logo */}
           <div className="border-b p-6 flex justify-center items-center">
-            <div className="relative h-[80px] w-[80px]">
-              {/* <Image src={logoSrc} alt="logo" fill /> */}
-              LOGO
+            <div className="relative h-[80px] w-[120px]">
+              <Image src={Logo} alt="logo" fill />
             </div>
           </div>
 

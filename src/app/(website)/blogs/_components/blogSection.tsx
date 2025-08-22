@@ -1,55 +1,9 @@
-import React from 'react'
-import Image from 'next/image'
+import { prisma } from "@/lib/prisma";
+import moment from "moment";
+import Image from "next/image";
 
-interface Blog {
-  id: number
-  image: string
-  date: string
-  author: string
-  title: string
-  description: string
-}
-
-const blogs: Blog[] = [
-  {
-    id: 1,
-    image: '/reuseable/demo-blog.png',
-    date: 'Jun 21, 2025',
-    author: 'Shohan',
-    title: 'Where Brands and Shoppers Connect',
-    description:
-      'Step into the future of retail media with OptiSpiders—a platform designed for visionaries. Our advanced suite doesn’t just place ads; it intelligently bridges your products to high-intent shoppers, amplifying your brand at every digital touchpoint.',
-  },
-  {
-    id: 2,
-    image: '/reuseable/demo-blog.png',
-    date: 'Jun 21, 2025',
-    author: 'Shohan',
-    title: 'Where Brands and Shoppers Connect',
-    description:
-      'From precision targeting to live, actionable insights and seamless brand elevation, OptiSpiders empowers you to own every moment on the digital shelf. Trusted by forward-thinking brands aiming for growth without limits.',
-  },
-  {
-    id: 3,
-    image: '/reuseable/demo-blog.png',
-    date: 'Jun 21, 2025',
-    author: 'Shohan',
-    title: 'Where Brands and Shoppers Connect',
-    description:
-      'Our advanced suite doesn’t just place ads; it intelligently bridges your products to high-intent shoppers, amplifying your brand at every digital touchpoint.',
-  },
-  {
-    id: 4,
-    image: '/reuseable/demo-blog.png',
-    date: 'Jun 21, 2025',
-    author: 'Shohan',
-    title: 'Where Brands and Shoppers Connect',
-    description:
-      'Step into the future of retail media with OptiSpiders—a platform designed for visionaries. Driving growth and maximizing ROI.',
-  },
-]
-
-const BlogSection = () => {
+const BlogSection = async () => {
+  const data = await prisma.blog.findMany();
   return (
     <section className=" container mx-auto py-16 px-6 lg:px-20">
       {/* Header */}
@@ -68,7 +22,7 @@ const BlogSection = () => {
 
       {/* Blog Grid */}
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-        {blogs.map((blog) => (
+        {data.map((blog) => (
           <div
             key={blog.id}
             className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-lg transition"
@@ -76,7 +30,7 @@ const BlogSection = () => {
             {/* Image */}
             <div className="relative w-full h-64 mb-4">
               <Image
-                src={blog.image}
+                src={blog.thumbnail}
                 alt={blog.title}
                 fill
                 className="rounded-lg object-cover"
@@ -85,7 +39,7 @@ const BlogSection = () => {
 
             {/* Meta */}
             <div className="flex items-center text-sm text-gray-500 gap-4 mb-2">
-              <span>{blog.date}</span>
+              <span>{moment(blog.createdAt).format("MMMM Do, YYYY")}</span>
               <span>•</span>
               <span>{blog.author}</span>
             </div>
@@ -97,13 +51,13 @@ const BlogSection = () => {
 
             {/* Description */}
             <p className="text-[#2F2F2F] text-sm leading-relaxed">
-              {blog.description}
+              {blog.content}
             </p>
           </div>
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default BlogSection
+export default BlogSection;

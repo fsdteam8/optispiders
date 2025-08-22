@@ -3,7 +3,7 @@ import ContactForm from "./_components/contact-form";
 const Page = () => {
   return (
     <div className="container pb-[100px]">
-      <div className="mx-auto text-center py-[100px]">
+      <div className="mx-auto text-center py-[50px] md:py-[100px]">
         <h1 className="text-primary font-semibold text-[22px] md:text-[30px]">
           Get Started with OptiSpiders
         </h1>

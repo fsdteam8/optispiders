@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const SyndicationSupport = () => {
@@ -19,9 +20,11 @@ const SyndicationSupport = () => {
               visibility, and performance across all key digital retail
               endpoints.
             </p>
-            <button className=" bg-[#2793D7] text-white px-[36px] py-[13px] rounded-xl text-[16px] lg:text-[18px]">
-              Learn more →
-            </button>
+            <Link href="/contact-us">
+              <button className=" bg-[#2793D7] text-white px-[36px] py-[13px] rounded-xl text-[16px] lg:text-[18px]">
+                Learn more →
+              </button>
+            </Link>
           </div>
           <div className="md:w-[30%] w-[80%] mx-auto md:mx-0  md:mt-0">
             <Image

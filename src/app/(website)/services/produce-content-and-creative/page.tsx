@@ -24,14 +24,14 @@ const Page = () => {
         title="Product Page Content"
         description="We create and manage optimized product detail page (PDP) content—titles, bullets, long-form descriptions, imagery, and enhanced modules—aligned with search algorithms and consumer behavior data. Every asset is built to meet platform specifications, support SEO, and reduce cart abandonment by improving shopper confidence."
         image={service_image_2}
-        link="#"
+        link="/contact-us"
       />
 
       <RatailMediaNetwork
         title="Retailer Brand Stores"
         description="We design and implement modular brand stores that deliver a curated, on-platform experience for your customers. Leveraging UX best practices and mobile-first design, we showcase your brand architecture, cross-sell opportunities, and campaign messaging—while maintaining compliance with platform design standards"
         buttonText="Learn More"
-        buttonLink="/"
+        buttonLink="/contact-us"
         imageSrc={retailerBrandImage}
         imageAlt="Brand protection"
       />
@@ -40,7 +40,7 @@ const Page = () => {
         title="Advertising Creative"
         description="Our team produces static and rich media assets for use in retail media placements, including banners, video, and sponsored brand creatives. All assets are built to specification, optimized for performance testing, and aligned with your campaign objectives, ensuring seamless execution across programmatic, native, and paid search formats."
         buttonText="Learn More"
-        buttonLink="/"
+        buttonLink="/contact-us"
         imageSrc={advertisingImage}
         imageAlt="Optimization Metrics"
       />

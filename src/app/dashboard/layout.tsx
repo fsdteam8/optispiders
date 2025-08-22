@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+import NextTopLoader from "nextjs-toploader";
 import { ReactNode } from "react";
 import Sidebar from "./_components/sidebar";
 import Topbar from "./_components/top-bar";
@@ -25,6 +26,7 @@ const LayouDashboardLayout = async ({ children }: Props) => {
           {children}
         </div>
       </div>
+      <NextTopLoader showSpinner={false} color="#1E2A38" />
     </div>
   );
 };

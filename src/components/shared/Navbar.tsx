@@ -317,7 +317,11 @@ export function Navbar() {
             >
               Sign In
             </Button>
-            <Button size="sm">Contact Us</Button>
+            <Button size="sm">
+              <Link href="/contact" className="w-full">
+                Contact Us
+              </Link>
+            </Button>
           </nav>
         </div>
       </div>

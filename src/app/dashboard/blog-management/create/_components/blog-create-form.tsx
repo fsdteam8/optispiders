@@ -1,4 +1,5 @@
 "use client";
+import { createBlogAction, editBlogAction } from "@/actions/blog";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -21,22 +22,74 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { blogSchema, BlogSchemaValue } from "@/schemas/blog";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Blog } from "@prisma/client";
+import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
-export default function BlogCreateForm() {
+interface Props {
+  initialData?: Blog;
+}
+
+export default function BlogCreateForm({ initialData }: Props) {
   const router = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm<BlogSchemaValue>({
     resolver: zodResolver(blogSchema),
+    defaultValues: {
+      title: initialData?.title ?? "",
+      author: initialData?.author ?? "",
+      content: initialData?.content ?? "",
+      thumbnail: initialData?.thumbnail ?? "",
+    },
   });
 
   async function onSubmit(values: BlogSchemaValue) {
-    console.log(values);
+    if (initialData) {
+      startTransition(() => {
+        editBlogAction(initialData.id, values).then((res) => {
+          if (!res.success) {
+            toast.error(res.message);
+            return;
+          }
+
+          // handle success
+          toast.success(res.message);
+          form.reset({
+            title: "",
+            content: "",
+            author: "",
+            thumbnail: "",
+          });
+          router.back();
+        });
+      });
+    } else {
+      startTransition(() => {
+        createBlogAction(values).then((res) => {
+          if (!res.success) {
+            toast.error(res.message);
+            return;
+          }
+
+          // handle success
+          toast.success(res.message);
+          form.reset({
+            title: "",
+            content: "",
+            author: "",
+            thumbnail: "",
+          });
+        });
+      });
+    }
   }
 
   return (
-    <Card>
+    <Card className="bg-white">
       <CardHeader>
         <section className="flex items-center justify-between">
           <div>
@@ -52,7 +105,9 @@ export default function BlogCreateForm() {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink>Create</BreadcrumbLink>
+                  <BreadcrumbLink>
+                    {initialData ? "Edit" : "Create"}
+                  </BreadcrumbLink>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
@@ -149,7 +204,10 @@ export default function BlogCreateForm() {
               />
             </div>
             <div className="w-full flex justify-end">
-              <Button type="submit">Publish Blog</Button>
+              <Button type="submit" disabled={isPending}>
+                {initialData ? "Save" : "Publish"} Blog{" "}
+                {isPending && <Loader2 className="animate-spin" />}
+              </Button>
             </div>
           </form>
         </Form>

@@ -1,11 +1,13 @@
-import Hero from "@/components/home/Hero";
-import ManagedMedia from "@/components/shared/ManagedMedia";
-import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
-import ReadyToTransform from "@/components/shared/ReadyToTransform";
-import ReuseableTwo from "@/components/shared/ReuseableTwo";
-import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
-import SyndicationSupport from "@/components/syndicationSupport/SyndicationSupport";
-import service_image_2 from "../../../../../public/service/service_image_2.png";
+import Hero from '@/components/home/Hero'
+import ManagedMedia from '@/components/shared/ManagedMedia'
+import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
+import ReadyToTransform from '@/components/shared/ReadyToTransform'
+import ReuseableTwo from '@/components/shared/ReuseableTwo'
+import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
+import SyndicationSupport from '@/components/syndicationSupport/SyndicationSupport'
+import service_image_2 from '../../../../../public/service/service_image_2.png'
+import retailerBrandImage from '@/../public/service/retailer_brand_image.jpg'
+import advertisingImage from '@/../public/service/advertising.jpg'
 
 const Page = () => {
   return (
@@ -29,7 +31,7 @@ const Page = () => {
         description="We design and implement modular brand stores that deliver a curated, on-platform experience for your customers. Leveraging UX best practices and mobile-first design, we showcase your brand architecture, cross-sell opportunities, and campaign messaging—while maintaining compliance with platform design standards"
         buttonText="Learn More"
         buttonLink="/"
-        imageSrc="/Reuseabale/brandStores.png"
+        imageSrc={retailerBrandImage}
         imageAlt="Brand protection"
       />
 
@@ -38,14 +40,14 @@ const Page = () => {
         description="Our team produces static and rich media assets for use in retail media placements, including banners, video, and sponsored brand creatives. All assets are built to specification, optimized for performance testing, and aligned with your campaign objectives, ensuring seamless execution across programmatic, native, and paid search formats."
         buttonText="Learn More"
         buttonLink="/"
-        imageSrc="/Reuseabale/advertising.png"
+        imageSrc={advertisingImage}
         imageAlt="Optimization Metrics"
       />
       <SyndicationSupport />
 
       <ReadyToTransform />
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

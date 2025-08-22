@@ -1,13 +1,13 @@
-import Image from "next/image";
-import React from "react";
+import Image, { StaticImageData } from 'next/image'
+import React from 'react'
 interface RatailMediaNetworkProps {
-  title: string;
-  description: string;
-  buttonText: string;
-  buttonLink?: string;
-  imageSrc: string;
-  imageAlt: string;
-  toptext?: string; 
+  title: string
+  description: string
+  buttonText: string
+  buttonLink?: string
+  imageSrc: StaticImageData | string
+  imageAlt: string
+  toptext?: string
 }
 
 const RatailMediaNetwork = ({
@@ -15,7 +15,7 @@ const RatailMediaNetwork = ({
   title,
   description,
   buttonText,
-  buttonLink = "#",
+  buttonLink = '#',
   imageSrc,
   imageAlt,
 }: RatailMediaNetworkProps) => {
@@ -24,12 +24,19 @@ const RatailMediaNetwork = ({
       <div className="container mx-auto py-12 ">
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-1/2">
-            {toptext && ( <a href="/products/brands-and-shoppers-connect-instantly" className="text-[#007BFF] text[16px] font-normal mb-4 cursor-pointer">{toptext}</a>)}
+            {toptext && (
+              <a
+                href="/products/brands-and-shoppers-connect-instantly"
+                className="text-[#007BFF] text[16px] font-normal mb-4 cursor-pointer"
+              >
+                {toptext}
+              </a>
+            )}
             <h2 className="text-[#063668] text-[24px] md:text-[32px] font-bold mb-6">
               {title}
             </h2>
             <p className="md:text-sm text-sm font-normal text-[#2F2F2F] mb-12 leading-[120%]">
-              {description.includes("<br") ? (
+              {description.includes('<br') ? (
                 <span dangerouslySetInnerHTML={{ __html: description }} />
               ) : (
                 description
@@ -54,7 +61,7 @@ const RatailMediaNetwork = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default RatailMediaNetwork;
+export default RatailMediaNetwork

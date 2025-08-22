@@ -1,4 +1,4 @@
-import Hero from '@/components/home/Hero'
+// import Hero from '@/components/home/Hero'
 import ManagedMedia from '@/components/shared/ManagedMedia'
 import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
 import ReadyToTransform from '@/components/shared/ReadyToTransform'
@@ -8,11 +8,12 @@ import SyndicationSupport from '@/components/syndicationSupport/SyndicationSuppo
 import service_image_2 from '../../../../../public/service/service_image_2.png'
 import retailerBrandImage from '@/../public/service/retailer_brand_image.jpg'
 import advertisingImage from '@/../public/service/advertising.jpg'
+import { ServiceBanner } from '../_components/ServiceBanner'
 
 const Page = () => {
   return (
     <div>
-      <Hero isStatsShow={false} />
+      <ServiceBanner />
       <ManagedMedia
         subtitle="Expert Services"
         title="Produce Content & Creative"

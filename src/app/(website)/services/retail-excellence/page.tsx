@@ -1,4 +1,4 @@
-import Hero from '@/components/home/Hero'
+// import Hero from '@/components/home/Hero'
 import ManagedMedia from '@/components/shared/ManagedMedia'
 import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
 import ReadyToTransform from '@/components/shared/ReadyToTransform'
@@ -8,11 +8,12 @@ import { Globe } from 'lucide-react'
 import service_image_3 from '../../../../../public/service/service_image_3.png'
 import brandImage from '@/../public/service/brand.png'
 import freeRecovery from '@/../public/service/free_recovery_image.png'
+import { ServiceBanner } from '../_components/ServiceBanner'
 
 const Page = () => {
   return (
     <div>
-      <Hero isStatsShow={false} />
+      <ServiceBanner />
       <ManagedMedia
         subtitle="Retail Excellence Services"
         title="Retail Excellence"

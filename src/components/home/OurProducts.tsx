@@ -1,8 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { images } from "@/constants/image";
-import { Globe } from "lucide-react";
-import Image from "next/image";
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { images } from '@/constants/image'
+import { Globe } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function OurProducts() {
   return (
@@ -63,10 +64,12 @@ export function OurProducts() {
 
       {/* View All Products Button */}
       <div className="text-center mt-12">
-        <Button className="bg-primary text-white px-6 py-2 rounded-full">
-          View All Products →
-        </Button>
+        <Link href="/products/brands-and-shoppers-connect-instantly">
+          <Button className="bg-primary text-white px-6 py-2 rounded-full">
+            View All Products →
+          </Button>
+        </Link>
       </div>
     </section>
-  );
+  )
 }

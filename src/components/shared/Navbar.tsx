@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+} from '@/components/ui/navigation-menu'
 import {
   Sheet,
   SheetContent,
@@ -17,31 +17,31 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { images } from "@/constants/image";
-import { cn } from "@/lib/utils";
-import { DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { ArrowRight, ChevronDown, Menu } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import * as React from "react";
-import { products, serviceGroups, services } from "../../../utils/Navbar";
+} from '@/components/ui/sheet'
+import { images } from '@/constants/image'
+import { cn } from '@/lib/utils'
+import { DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu'
+import { ArrowRight, ChevronDown, Menu } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import * as React from 'react'
+import { products, serviceGroups, services } from '../../../utils/Navbar'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "../ui/dropdown-menu";
+} from '../ui/dropdown-menu'
 
 export function Navbar() {
-  const column1 = products.slice(0, 5);
-  const column2 = products.slice(5, 9);
-  const column3 = products.slice(9, 13);
+  const column1 = products.slice(0, 5)
+  const column2 = products.slice(5, 9)
+  const column3 = products.slice(9, 13)
 
   return (
     <header className="w-full bg-white">
       <div className="container flex h-16 py-3 items-center justify-between">
         {/* Logo */}
-        <Link href={"/"}>
+        <Link href={'/'}>
           <div className="hidden lg:block">
             <Image
               src={images.logo}
@@ -72,7 +72,7 @@ export function Navbar() {
                   {/* Column 1 */}
                   <div className="space-y-3 border border-gray/25 p-4 rounded-lg">
                     <Link
-                      href={"/products/brands-and-shoppers-connect-instantly"}
+                      href={'/products/brands-and-shoppers-connect-instantly'}
                       className="flex items-center gap-2 text-lg font-semibold text-primary"
                     >
                       <span className="font-medium ">Page 1</span>
@@ -96,7 +96,7 @@ export function Navbar() {
                   {/* Column 2 */}
                   <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
                     <Link
-                      href={"/products/content-optimization"}
+                      href={'/products/content-optimization'}
                       className="flex items-center gap-2 text-lg font-semibold text-primary"
                     >
                       <span className="font-medium ">Page 2</span>
@@ -120,7 +120,7 @@ export function Navbar() {
                   {/* Column 3 */}
                   <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
                     <Link
-                      href={"/products/retail-operation"}
+                      href={'/products/retail-operation'}
                       className="flex items-center gap-2 text-lg font-semibold text-primary"
                     >
                       <span className="font-medium ">Page 3</span>
@@ -205,7 +205,7 @@ export function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
+              <Link href="/about-us" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   About Us
                 </NavigationMenuLink>
@@ -228,7 +228,7 @@ export function Navbar() {
           <SheetContent side="left" className="pr-0 text-primary">
             <SheetHeader>
               <SheetTitle>
-                <Link href={"/"}>
+                <Link href={'/'}>
                   <div className=" lg:hidden">
                     <Image
                       src={images.logo}
@@ -286,7 +286,7 @@ export function Navbar() {
                   Resources
                 </Link>
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-foreground/70 transition-colors hover:text-foreground"
                 >
                   About Us
@@ -298,7 +298,7 @@ export function Navbar() {
 
         {/* Mobile Logo */}
         <div className="flex items-center justify-between space-x-2 flex-1 md:flex-none md:justify-end">
-          <Link href={"/"}>
+          <Link href={'/'}>
             <div className="lg:hidden">
               <Image
                 src={images.logo}
@@ -322,12 +322,12 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  );
+  )
 }
 
 const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
+  React.ElementRef<'a'>,
+  React.ComponentPropsWithoutRef<'a'>
 >(({ className, title, children, ...props }, ref) => {
   return (
     <li>
@@ -335,7 +335,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
             className
           )}
           {...props}
@@ -347,6 +347,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  );
-});
-ListItem.displayName = "ListItem";
+  )
+})
+ListItem.displayName = 'ListItem'

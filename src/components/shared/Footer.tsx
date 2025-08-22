@@ -1,26 +1,28 @@
-import Image from "next/image";
-import React from "react";
-import Logo from "../../../public/logo/logo.png";
+import Image from 'next/image'
+import React from 'react'
+import Logo from '../../../public/logo/logo.png'
+import Link from 'next/link'
 
 const quickLinks = [
-  { name: "Products", href: "/products" },
-  { name: "Services", href: "/services" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "About Us", href: "/about-us" },
-  { name: "Contact Us", href: "/contact-us" },
-];
+  { name: 'Products', href: '/products/brands-and-shoppers-connect-instantly' },
+  { name: 'Services', href: '/services/managed-media' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'About Us', href: '/about-us' },
+  { name: 'Contact Us', href: '/contact-us' },
+]
 
 const servicesLinks = [
-  { name: "Managed Media", href: "/services/managed-media" },
-  { name: "Retail Media Network", href: "/services/retail-media-network" },
-  { name: "Brand Protection", href: "/services/brand-protection" },
-  { name: "Fee Recovery", href: "/services/fee-recovery" },
-  { name: "Smart Automation", href: "/services/smart-automation" },
+  { name: 'Managed Media', href: '/services/managed-media' },
+  { name: 'Retail Media Network', href: '/services/retail-media-network' },
+  { name: 'Brand Protection', href: '/services/brand-protection' },
+  { name: 'Fee Recovery', href: '/services/fee-recovery' },
+  { name: 'Smart Automation', href: '/services/smart-automation' },
   {
-    name: "Privacy-First Intelligence",
-    href: "/services/privacy-first-intelligence",
+    name: 'Privacy-First Intelligence',
+    href: '/services/privacy-first-intelligence',
   },
-];
+]
+
 const Footer = () => {
   return (
     <footer className="py-12">
@@ -29,7 +31,7 @@ const Footer = () => {
           {/* Left Section - Newsletter */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Image src={Logo} alt=""></Image>
+              <Image src={Logo} alt="Opti Spiders Logo" />
             </div>
 
             <p className="text-base text-[#707070] mb-5">
@@ -40,14 +42,14 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Work Email"
-                className="flex-1 px-3 py-4 border-2 rounded-l-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#2993D8]  border-[#2993D8]"
+                className="flex-1 px-3 py-4 border-2 rounded-l-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#2993D8] border-[#2993D8]"
               />
-              <button className="bg-[#2993D8]  text-white px-6 py-2 rounded-r-md text-sm font-medium transition-colors">
+              <button className="bg-[#2993D8] text-white px-6 py-2 rounded-r-md text-sm font-medium transition-colors">
                 Subscribe
               </button>
             </div>
 
-            <p className="text-base text-[#707070] ">
+            <p className="text-base text-[#707070]">
               By signing up you agree to the terms of our Privacy Policy and to
               receive electronic communications from Flywheel.
             </p>
@@ -62,9 +64,9 @@ const Footer = () => {
               <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="text-base text-[#707070]">
+                    <Link href={link.href} className="text-base text-[#707070]">
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -80,9 +82,12 @@ const Footer = () => {
               <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {servicesLinks.map((service, index) => (
                   <li key={index}>
-                    <a href={service.href} className="text-base text-[#707070]">
+                    <Link
+                      href={service.href}
+                      className="text-base text-[#707070]"
+                    >
                       {service.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -96,17 +101,17 @@ const Footer = () => {
             © 2025 Opti Spiders. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-sm text-[#707070]">
+            <Link href="/privacy-policy" className="text-sm text-[#707070]">
               Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-[#707070]">
+            </Link>
+            <Link href="/terms-of-service" className="text-sm text-[#707070]">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

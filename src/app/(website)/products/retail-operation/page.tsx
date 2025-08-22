@@ -1,15 +1,16 @@
-import React from "react";
-import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
-import products1 from "../../../../../public/product/OptiSpider.png";
-import Hero from "@/components/home/Hero";
-import ReadyToTransform from "@/components/shared/ReadyToTransform";
-import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
-import RetailInsights from "../_components/RetailInsite";
+import React from 'react'
+import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
+import products1 from '../../../../../public/product/OptiSpider.png'
+// import Hero from "@/components/home/Hero";
+import ReadyToTransform from '@/components/shared/ReadyToTransform'
+import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
+import RetailInsights from '../_components/RetailInsite'
+import { ProductsBanner } from '../_components/ProductsBanner'
 
 export default function page() {
   return (
     <div>
-      <Hero isStatsShow={false} />
+      <ProductsBanner />
 
       <ServicePaidSearch
         title="Market Intelligence"
@@ -42,5 +43,5 @@ export default function page() {
 
       <ReadyToTransform />
     </div>
-  );
+  )
 }

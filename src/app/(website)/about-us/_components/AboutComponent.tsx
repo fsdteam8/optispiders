@@ -25,8 +25,10 @@ export const AboutComponent = () => {
         heading="About Us"
         description="Explore your full catalog—intelligently optimized by OptiSpiders’ AI for success across every online shelf. Spot what’s popular, what converts best, and what’s primed for your campaigns."
         //Navigate to /home and /services
-        onPrimaryBtnClick={() => router.push('/')}
-        onSecondaryBtnClick={() => router.push('/services')}
+        onPrimaryBtnClick={() => router.push('/services/managed-media')}
+        onSecondaryBtnClick={() =>
+          router.push('/products/brands-and-shoppers-connect-instantly')
+        }
       />
     </div>
   )

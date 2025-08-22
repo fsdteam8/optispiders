@@ -1,15 +1,17 @@
-import Hero from "@/components/home/Hero";
-import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
-import productsPage1 from "../../../../../public/product/productPage2_1.png";
-import productsPage3 from "../../../../../public/product/productPage2_3.png";
-import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
-import ReadyToTransform from "@/components/shared/ReadyToTransform";
-import VisibilityIntelligence from "@/components/visibiliyIntelligence/VisibilityIntelligence";
+// import Hero from '@/components/home/Hero'
+import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
+import productsPage1 from '../../../../../public/product/productPage2_1.png'
+import productsPage3 from '../../../../../public/product/productPage2_3.png'
+import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
+import ReadyToTransform from '@/components/shared/ReadyToTransform'
+import VisibilityIntelligence from '@/components/visibiliyIntelligence/VisibilityIntelligence'
+import { ProductsBanner } from '../_components/ProductsBanner'
 
 const Page = () => {
   return (
     <div>
-      <Hero isStatsShow={false} />
+      {/* <Hero isStatsShow={false} /> */}
+      <ProductsBanner />
 
       <div className="mt-20">
         <ServicePaidSearch
@@ -38,10 +40,9 @@ const Page = () => {
 
       <VisibilityIntelligence />
 
-
       <ReadyToTransform />
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

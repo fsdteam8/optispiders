@@ -1,8 +1,9 @@
-import { HiArrowRight } from "react-icons/hi";
-import { IoIosStats } from "react-icons/io";
-import { LuShield } from "react-icons/lu";
-import { PiLightningBold } from "react-icons/pi";
-import { Button } from "../ui/button";
+import { HiArrowRight } from 'react-icons/hi'
+import { IoIosStats } from 'react-icons/io'
+import { LuShield } from 'react-icons/lu'
+import { PiLightningBold } from 'react-icons/pi'
+import { Button } from '../ui/button'
+import Link from 'next/link'
 
 const ReadyToTransform = () => {
   return (
@@ -63,19 +64,23 @@ const ReadyToTransform = () => {
         </div>
         <div className="flex justify-center mt-20 py-10">
           <div className="flex flex-col md:flex-row gap-5 w-full max-w-xl px-5 justify-center">
-            <Button className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-blue-400 h-[40px] text-white text-center font-semibold px-4 py-4 rounded-full flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
-              Get Started
-              <HiArrowRight className="text-lg" />
-            </Button>
+            <Link href={'/services/managed-media'}>
+              <Button className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-blue-400 h-[40px] text-white text-center font-semibold px-4 py-4 rounded-full flex items-center justify-center gap-2 hover:from-blue-600 hover:to-blue-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Get Started
+                <HiArrowRight className="text-lg" />
+              </Button>
+            </Link>
 
-            <Button className="w-full md:w-auto border border-white/50 text-white h-[40px] bg-inherit font-semibold px-4 py-4 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
-              Explore Products
-            </Button>
+            <Link href={'/products/brands-and-shoppers-connect-instantly'}>
+              <Button className="w-full md:w-auto border border-white/50 text-white h-[40px] bg-inherit font-semibold px-4 py-4 rounded-full flex items-center justify-center hover:bg-white/10 hover:text-white shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                Explore Products
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ReadyToTransform;
+export default ReadyToTransform

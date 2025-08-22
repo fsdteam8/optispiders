@@ -1,15 +1,17 @@
-import Hero from "@/components/home/Hero";
-import ManagedMedia from "@/components/shared/ManagedMedia";
-import RatailMediaNetwork from "@/components/shared/RatailMediaNetwork";
-import ReadyToTransform from "@/components/shared/ReadyToTransform";
-import ReuseableTwo from "@/components/shared/ReuseableTwo";
-import ServicePaidSearch from "@/components/shared/ServicePaidSearch";
-import paidSearchImg from "../../../../../public/service/service_Image1.png";
+// import Hero from "@/components/home/Hero";
+import ManagedMedia from '@/components/shared/ManagedMedia'
+import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
+import ReadyToTransform from '@/components/shared/ReadyToTransform'
+import ReuseableTwo from '@/components/shared/ReuseableTwo'
+import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
+import paidSearchImg from '../../../../../public/service/service_Image1.png'
+import { ServiceBanner } from '../_components/ServiceBanner'
 
 const Page = () => {
   return (
     <div>
-      <Hero isStatsShow={false} />
+      {/* <Hero isStatsShow={false} /> */}
+      <ServiceBanner />
 
       <ManagedMedia
         subtitle="Expert Services"
@@ -44,7 +46,7 @@ const Page = () => {
 
       <ReadyToTransform />
     </div>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page

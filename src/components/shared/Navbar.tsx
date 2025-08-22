@@ -195,7 +195,7 @@ export function Navbar() {
                     <Link href="/about-us">About us</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className="cursor-pointer" asChild>
-                    <Link href="/contact">Contact us</Link>
+                    <Link href="/contact-us">Contact us</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem className="cursor-pointer" asChild>
                     <Link href="/blogs">Blogs</Link>
@@ -205,7 +205,7 @@ export function Navbar() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
+              <Link href="/about-us" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   About Us
                 </NavigationMenuLink>
@@ -286,7 +286,7 @@ export function Navbar() {
                   Resources
                 </Link>
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-foreground/70 transition-colors hover:text-foreground"
                 >
                   About Us
@@ -310,18 +310,18 @@ export function Navbar() {
             </div>
           </Link>
           <nav className="flex items-center space-x-2">
-            <Button
-              variant="outline"
-              size="sm"
-              className="border border-primary text-primary"
-            >
-              Sign In
-            </Button>
-            <Button size="sm">
-              <Link href="/contact" className="w-full">
-                Contact Us
-              </Link>
-            </Button>
+            <Link href="login">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border border-primary text-primary"
+              >
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/contact-us">
+              <Button size="sm">Contact Us</Button>
+            </Link>
           </nav>
         </div>
       </div>

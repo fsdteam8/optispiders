@@ -1,10 +1,10 @@
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image'
+import React from 'react'
 
 const SyndicationSupport = () => {
   return (
-    <section>
-      <div className="container mx-auto my-32">
+    <section className="bg-[#FAFAFA]">
+      <div className="container mx-auto my-32 ">
         <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-[60%]">
             <h2 className="text-[#063668] text-[32px] md:text-[48px] font-bold mb-4">
@@ -25,7 +25,7 @@ const SyndicationSupport = () => {
           </div>
           <div className="md:w-[30%] w-[80%] mx-auto md:mx-0  md:mt-0">
             <Image
-              src={"/Reuseabale/syndication.png"}
+              src={'/reuseable/syndication.png'}
               alt="syndication support"
               width={527}
               height={527}
@@ -34,7 +34,7 @@ const SyndicationSupport = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default SyndicationSupport;
+export default SyndicationSupport

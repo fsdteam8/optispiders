@@ -1,27 +1,33 @@
-import Image from "next/image";
-import React from "react";
+import Image, { StaticImageData } from 'next/image'
+import React from 'react'
 interface ReuseableTwoProps {
-      title: string;
-  description: string;
-  buttonText: string;
-  buttonLink?: string; 
-  imageSrc: string;
-  imageAlt: string;
+  title: string
+  description: string
+  buttonText: string
+  buttonLink?: string
+  imageSrc: StaticImageData | string
+  imageAlt: string
 }
 const ReuseableTwo = ({
   title,
   description,
   buttonText,
-  buttonLink = "#",
+  buttonLink = '#',
   imageSrc,
   imageAlt,
-}:ReuseableTwoProps) => {
+}: ReuseableTwoProps) => {
   return (
     <section className="shadow-md bg-white">
       <div className="container mx-auto py-16">
         <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-[35%] mt-10 md:mt-0">
-            <Image src={imageSrc} alt={imageAlt} width={527} height={527} />
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={527}
+              height={527}
+              className="object-cover rounded-[8px]"
+            />
           </div>
           <div className="md:w-[60%]">
             <h2 className="text-[#063668] text-[32px] md:text-[48px] font-bold mb-6">
@@ -40,7 +46,7 @@ const ReuseableTwo = ({
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ReuseableTwo;
+export default ReuseableTwo

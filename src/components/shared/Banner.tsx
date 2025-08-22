@@ -38,7 +38,7 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
               </h1>
             )}
 
-            <h1 className="my-5 leading-[150%] text-3xl sm:text-4xl lg:text-[42px] font-semibold">
+            <h1 className="my-5 leading-[2.8] text-3xl sm:text-4xl lg:text-[42px] font-semibold">
               {heading}
             </h1>
 
@@ -56,7 +56,7 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
               {secondaryBtnText && (
                 <Button
                   variant={secondaryBtnVariant}
-                  className="bg-inherit border hover:bg-white/20 border-white/50 text-white"
+                  className="bg-inherit border hover:bg-white/20 border-white/50 text-white hover:text-white"
                   onClick={onSecondaryBtnClick}
                 >
                   {secondaryBtnText}

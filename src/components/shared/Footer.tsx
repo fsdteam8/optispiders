@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import Logo from "../../../public/logo/logo.png";
 
 const quickLinks = [
@@ -29,7 +28,7 @@ const Footer = () => {
           {/* Left Section - Newsletter */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Image src={Logo} alt=""></Image>
+              <Image src={Logo} alt="Logo" />
             </div>
 
             <p className="text-base text-[#707070] mb-5">
@@ -40,14 +39,14 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Work Email"
-                className="flex-1 px-3 py-4 border-2 rounded-l-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#2993D8]  border-[#2993D8]"
+                className="flex-1 px-3 py-2 border-2 rounded-l-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#2993D8]  border-[#2993D8]"
               />
               <button className="bg-[#2993D8]  text-white px-6 py-2 rounded-r-md text-sm font-medium transition-colors">
                 Subscribe
               </button>
             </div>
 
-            <p className="text-base text-[#707070] ">
+            <p className="text-[14px] md:text-base text-[#707070] ">
               By signing up you agree to the terms of our Privacy Policy and to
               receive electronic communications from Flywheel.
             </p>
@@ -62,7 +61,10 @@ const Footer = () => {
               <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a href={link.href} className="text-base text-[#707070]">
+                    <a
+                      href={link.href}
+                      className="text-base text-[#707070] hover:text-primary duration-300 transition-colors"
+                    >
                       {link.name}
                     </a>
                   </li>
@@ -80,7 +82,10 @@ const Footer = () => {
               <ul className="space-y-3 text-start md:text-center lg:text-start">
                 {servicesLinks.map((service, index) => (
                   <li key={index}>
-                    <a href={service.href} className="text-base text-[#707070]">
+                    <a
+                      href={service.href}
+                      className="text-base text-[#707070] hover:text-primary duration-300 transition-colors"
+                    >
                       {service.name}
                     </a>
                   </li>

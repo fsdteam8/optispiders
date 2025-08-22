@@ -1,8 +1,8 @@
-import Stats from "@/app/(website)/_components/stats";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { HeroProps } from "../../../types/banner";
-import { Button } from "../ui/button";
+import Stats from '@/app/(website)/_components/stats'
+import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import { HeroProps } from '../../../types/banner'
+import { Button } from '../ui/button'
 
 const HeroBannerTwo: React.FC<HeroProps> = ({
   isStatsShow = false,
@@ -10,15 +10,15 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
   badgeIcon,
   heading,
   description,
-  primaryBtnText = "Get Started",
+  primaryBtnText = 'Get Started',
   primaryBtnIcon = <ArrowRight />,
   onPrimaryBtnClick,
-  secondaryBtnText = "View Products",
+  secondaryBtnText = 'View Products',
   onSecondaryBtnClick,
-  secondaryBtnVariant = "outline",
-  imageSrc = "/reuseabale/hero-banner.png",
-  imageAlt = "Hero image",
-  bgImage = "https://files.edgestore.dev/rzoslohhv2lk81i6/optispiders/_public/banner.webp",
+  secondaryBtnVariant = 'outline',
+  imageSrc = '/reuseable/hero-banner.png',
+  imageAlt = 'Hero image',
+  bgImage = 'https://files.edgestore.dev/rzoslohhv2lk81i6/optispiders/_public/banner.webp',
 }) => {
   return (
     <div className="relative">
@@ -86,7 +86,7 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default HeroBannerTwo;
+export default HeroBannerTwo

@@ -1,30 +1,30 @@
-import React from "react";
-import SmarterAutomation from "../shared/ReuseableThree";
+import React from 'react'
+import SmarterAutomation from '../shared/ReuseableThree'
 const showcaseItems = [
   {
-    title: "Smarter Automation. Total Control.",
+    title: 'Smarter Automation. Total Control.',
     description:
-      "Take command of your retail media with OptiSpiders customizable automation engine...",
+      'Take command of your retail media with OptiSpiders customizable automation engine...',
 
     belowtext:
-      "Experience effortless control and sharper performance—no matter how complex your strategy.",
+      'Experience effortless control and sharper performance—no matter how complex your strategy.',
     list: [
-      "Dynamic Placement Targeting",
-      "Hourly & Intraday Bid Optimization",
-      "Automated Rule-Based Campaigns",
-      "Context-Aware Adjustments",
-      "Outcome-Driven Smart Bidding",
+      'Dynamic Placement Targeting',
+      'Hourly & Intraday Bid Optimization',
+      'Automated Rule-Based Campaigns',
+      'Context-Aware Adjustments',
+      'Outcome-Driven Smart Bidding',
     ],
   },
-];
+]
 
 const SmartAutomations = () => {
   return (
     <div className="container mx-auto">
       <SmarterAutomation
         items={showcaseItems}
-        rightImage={"/reuseable/smartautomation.png"}
-        buttonLink={"/"}
+        rightImage={'/reuseable/smartautomation.png'}
+        buttonLink={'/contact-us'}
       >
         {showcaseItems[0].list && (
           <ul className="list-disc list-inside space-y-1 text-gray-700 mb-6">
@@ -35,7 +35,7 @@ const SmartAutomations = () => {
         )}
       </SmarterAutomation>
     </div>
-  );
-};
+  )
+}
 
-export default SmartAutomations;
+export default SmartAutomations

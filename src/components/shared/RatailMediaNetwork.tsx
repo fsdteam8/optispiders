@@ -15,7 +15,7 @@ const RatailMediaNetwork = ({
   title,
   description,
   buttonText,
-  buttonLink = '#',
+  buttonLink = '/contact-us',
   imageSrc,
   imageAlt,
 }: RatailMediaNetworkProps) => {

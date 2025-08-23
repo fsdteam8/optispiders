@@ -71,7 +71,7 @@ export default function ContactForm() {
   }
 
   return (
-    <Card className="w-fit mx-auto shadow-none">
+    <Card className="w-fit mx-auto shadow-none border-input border-[1px] rounded-[6px]">
       <CardContent>
         <Form {...form}>
           <form
@@ -283,7 +283,7 @@ export default function ContactForm() {
                     />
                   </FormControl>
                   <div className="space-y-1 leading-none">
-                    <FormLabel>
+                    <FormLabel className="opacity-90 text-black leading-[150%] font-light">
                       By submitting this form you agree to our terms and
                       conditions and privacy policy as well as to receive
                       marketing emails from Optispider. You can unsubscribe from

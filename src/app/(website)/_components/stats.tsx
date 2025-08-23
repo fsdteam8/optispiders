@@ -9,12 +9,14 @@ const Stats = () => {
           <p className="text-[#2F2F2F] text-[14px]">Average ROAS Increase</p>
         </div>
         <div className="text-center">
-          <h1 className="md:text-[24px] font-bold text-primary">120+</h1>
-          <p className="text-[#2F2F2F] text-[14px]">Brands Empowered</p>
+          <h1 className="md:text-[24px] font-bold text-primary">35%</h1>
+          <p className="text-[#2F2F2F] text-[14px]">Revenue Growth</p>
         </div>
         <div className="text-center">
-          <h1 className="md:text-[24px] font-bold text-primary">75M+</h1>
-          <p className="text-[#2F2F2F] text-[14px]">Optimized Listings</p>
+          <h1 className="md:text-[24px] font-bold text-primary">85%</h1>
+          <p className="text-[#2F2F2F] text-[14px]">
+            Time Saved on Campaign Management
+          </p>
         </div>
       </Card>
     </div>

@@ -259,7 +259,7 @@ export function Navbar() {
                           href="/products/content-optimization"
                           className="text-sm font-medium text-primary flex items-center gap-1"
                         >
-                          Page 2 <ArrowRight className="h-3 w-3" />
+                          Content Power  <ArrowRight className="h-3 w-3" />
                         </Link>
                         {column2.map((product) => (
                           <Link
@@ -276,7 +276,7 @@ export function Navbar() {
                           href="/products/retail-operation"
                           className="text-sm font-medium text-primary flex items-center gap-1"
                         >
-                          Page 3 <ArrowRight className="h-3 w-3" />
+                          Market Intelligence  <ArrowRight className="h-3 w-3" />
                         </Link>
                         {column3.map((product) => (
                           <Link

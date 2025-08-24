@@ -53,8 +53,8 @@ const RatailMediaNetwork = ({
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={500}
-              height={500}
+              width={700}
+              height={700}
               className="w-full h-full object-cover"
             />
           </div>

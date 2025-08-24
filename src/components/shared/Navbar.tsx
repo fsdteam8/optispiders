@@ -242,7 +242,7 @@ export function Navbar() {
                           href="/products/brands-and-shoppers-connect-instantly"
                           className="text-sm font-medium text-primary flex items-center gap-1"
                         >
-                          Page 1 <ArrowRight className="h-3 w-3" />
+                          Retail Media <ArrowRight className="h-3 w-3" />
                         </Link>
                         {column1.map((product) => (
                           <Link

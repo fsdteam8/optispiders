@@ -65,7 +65,7 @@ export function Navbar() {
                         href={"/products/brands-and-shoppers-connect-instantly"}
                         className="flex items-center gap-2 text-lg font-semibold text-primary"
                       >
-                        <span className="font-medium ">Page 1</span>
+                        <span className="font-medium ">Retail Media</span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                       {column1.map((product) => (
@@ -84,7 +84,7 @@ export function Navbar() {
                         href={"/products/content-optimization"}
                         className="flex items-center gap-2 text-lg font-semibold text-primary"
                       >
-                        <span className="font-medium ">Page 2</span>
+                        <span className="font-medium ">Content Power</span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                       {column2.map((product) => (
@@ -103,7 +103,7 @@ export function Navbar() {
                         href={"/products/retail-operation"}
                         className="flex items-center gap-2 text-lg font-semibold text-primary"
                       >
-                        <span className="font-medium ">Page 3</span>
+                        <span className="font-medium ">Market Intelligence</span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                       {column3.map((product) => (

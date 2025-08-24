@@ -27,7 +27,7 @@ const showcaseItems = [
 const VisibilityIntelligence = () => {
   return (
     <div>
-      <div className="container mx-auto">
+      <div className="container mx-auto ">
         <SmarterAutomation
           items={showcaseItems}
           rightImage={'/reuseable/visibility.png'}

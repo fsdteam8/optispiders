@@ -231,9 +231,9 @@ export function Navbar() {
                 </Link>
 
                 <Collapsible open={productsOpen} onOpenChange={setProductsOpen}>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium hover:text-foreground">
+                  <CollapsibleTrigger className="flex items-center justify-start w-full text-left font-medium hover:text-foreground">
                     Products
-                    <ChevronDown className={`h-4 w-4 transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`h-4 w-4 ml-[45px] transition-transform ${productsOpen ? "rotate-180" : ""}`} />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2 space-y-3">
                     <div className="ml-4 space-y-4">
@@ -293,9 +293,9 @@ export function Navbar() {
                 </Collapsible>
 
                 <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium hover:text-foreground">
+                  <CollapsibleTrigger className="flex items-center justify-start w-full text-left font-medium hover:text-foreground">
                     Services
-                    <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`h-4 w-4 ml-[46px] transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2 space-y-3">
                     <div className="ml-4 space-y-4">
@@ -316,9 +316,9 @@ export function Navbar() {
                 </Collapsible>
 
                 <Collapsible open={resourcesOpen} onOpenChange={setResourcesOpen}>
-                  <CollapsibleTrigger className="flex items-center justify-between w-full text-left font-medium hover:text-foreground">
+                  <CollapsibleTrigger className="flex items-center justify-start w-full text-left font-medium hover:text-foreground">
                     Resources
-                    <ChevronDown className={`h-4 w-4 transition-transform ${resourcesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown className={`h-4 w-4 ml-[33px] transition-transform ${resourcesOpen ? "rotate-180" : ""}`} />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2 space-y-2">
                     <div className="ml-4 space-y-2">
@@ -334,6 +334,15 @@ export function Navbar() {
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
+
+                   <Link href="login">
+              <Button variant="outline" size="sm" className="border border-primary text-primary bg-transparent">
+                Sign In
+              </Button>
+            </Link>
+            <Link href="/contact-us">
+              <Button size="sm">Contact Us</Button>
+            </Link>
               </div>
             </div>
           </SheetContent>

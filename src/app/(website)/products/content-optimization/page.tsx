@@ -1,7 +1,7 @@
 // import Hero from '@/components/home/Hero'
 import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
 import productsPage1 from '../../../../../public/product/productPage2_1.png'
-import productsPage3 from '../../../../../public/product/productPage2_3.png'
+import productsPage3 from '../../../../../public/product/ChatGPTImage.png'
 import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
 import ReadyToTransform from '@/components/shared/ReadyToTransform'
 import VisibilityIntelligence from '@/components/visibiliyIntelligence/VisibilityIntelligence'

@@ -6,7 +6,7 @@ import ReuseableTwo from '@/components/shared/ReuseableTwo'
 import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
 import SyndicationSupport from '@/components/syndicationSupport/SyndicationSupport'
 import service_image_2 from '../../../../../public/service/service_image_2.png'
-import retailerBrandImage from '@/../public/service/retailer_brand_image.jpg'
+import retailerBrandImage from '@/../public/service/freepik__enhance.jpeg'
 import advertisingImage from '@/../public/service/advertising.jpg'
 import { ServiceBanner } from '../_components/ServiceBanner'
 

@@ -7,7 +7,7 @@ import ServicePaidSearch from '@/components/shared/ServicePaidSearch'
 import { Globe } from 'lucide-react'
 import service_image_3 from '../../../../../public/service/service_image_3.png'
 import brandImage from '@/../public/service/brand.png'
-import freeRecovery from '@/../public/service/free_recovery_image.png'
+import freeRecovery from '@/../public/service/fee.png'
 import { ServiceBanner } from '../_components/ServiceBanner'
 
 const Page = () => {

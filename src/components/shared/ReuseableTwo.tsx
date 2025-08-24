@@ -24,8 +24,8 @@ const ReuseableTwo = ({
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={527}
-              height={527}
+              width={727}
+              height={727}
               className="object-cover rounded-[8px]"
             />
           </div>

@@ -19,7 +19,7 @@ const ReuseableTwo = ({
   id,
 }: ReuseableTwoProps) => {
   return (
-    <section id={id} className="shadow-md bg-white scroll-mt-25">
+    <section id={id} className="shadow-md bg-white scroll-mt-24">
       <div className="container mx-auto py-16">
         <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-[35%] mt-10 md:mt-0">

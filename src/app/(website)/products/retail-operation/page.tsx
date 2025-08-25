@@ -34,7 +34,7 @@ export default function page() {
       <RetailInsights id={slugify('retail-insights')} />
 
       <RatailMediaNetwork
-        id={slugify('digital-shelf-intelligence')}
+        id={slugify('digital-shelf')}
         toptext="digital-shelf"
         title="Turn online impressions into measurable growth"
         description="Your digital shelf is your brand’s storefront in the online marketplace—where shoppers discover, evaluate, and decide. At OptiSpiders, we transform that moment into opportunity.

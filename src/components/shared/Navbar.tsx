@@ -1,7 +1,11 @@
-"use client"
+'use client'
 
-import { Button } from "@/components/ui/button"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { Button } from '@/components/ui/button'
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,14 +14,22 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { images } from "@/constants/image"
-import { ArrowRight, ChevronDown, Menu } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import * as React from "react"
-import { products,serviceGroups } from "../../../utils/Navbar"
+} from '@/components/ui/navigation-menu'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+import { images } from '@/constants/image'
+import { ArrowRight, ChevronDown, Menu } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import * as React from 'react'
+import { products, serviceGroups } from '../../../utils/Navbar'
+import slugify from '@/lib/slugify'
 
 export function Navbar() {
   const column1 = products.slice(0, 5)
@@ -28,14 +40,18 @@ export function Navbar() {
   const [servicesOpen, setServicesOpen] = React.useState(false)
   const [resourcesOpen, setResourcesOpen] = React.useState(false)
 
+  const parent1 = '/products/brands-and-shoppers-connect-instantly'
+  const parent2 = '/products/content-optimization'
+  const parent3 = '/products/retail-operation'
+
   return (
     <header className="w-full bg-white">
       <div className="container flex h-[80px] py-3 items-center justify-between">
         {/* Logo */}
-        <Link href={"/"}>
+        <Link href={'/'}>
           <div className="hidden lg:block">
             <Image
-              src={images.logo || "/placeholder.svg"}
+              src={images.logo || '/placeholder.svg'}
               alt="logo.png"
               width={100}
               height={80}
@@ -50,7 +66,9 @@ export function Navbar() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Home
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
 
@@ -62,17 +80,27 @@ export function Navbar() {
                     {/* Column 1 */}
                     <div className="space-y-3 border border-gray/25 p-4 rounded-lg">
                       <Link
-                        href={"/products/brands-and-shoppers-connect-instantly"}
+                        href={'/products/brands-and-shoppers-connect-instantly'}
                         className="flex items-center gap-2 text-lg font-semibold text-primary"
                       >
                         <span className="font-medium ">Retail Media</span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                       {column1.map((product) => (
-                        <div key={product.title} className="flex items-start gap-2">
+                        <div
+                          key={product.title}
+                          className="flex items-start gap-2"
+                        >
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                           <div>
-                            <h1 className="font-light text-foreground">{product.title}</h1>
+                            <Link
+                              scroll={true}
+                              href={`${parent1}#${slugify(product.title)}`}
+                            >
+                              <h1 className="font-light text-foreground">
+                                {product.title}
+                              </h1>
+                            </Link>
                           </div>
                         </div>
                       ))}
@@ -81,17 +109,27 @@ export function Navbar() {
                     {/* Column 2 */}
                     <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
                       <Link
-                        href={"/products/content-optimization"}
+                        href={'/products/content-optimization'}
                         className="flex items-center gap-2 text-lg font-semibold text-primary"
                       >
                         <span className="font-medium ">Content Power</span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                       {column2.map((product) => (
-                        <div key={product.title} className="flex items-start gap-2">
+                        <div
+                          key={product.title}
+                          className="flex items-start gap-2"
+                        >
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                           <div>
-                            <h1 className="font-light text-foreground">{product.title}</h1>
+                            <Link
+                              scroll={true}
+                              href={`${parent2}#${slugify(product.title)}`}
+                            >
+                              <h1 className="font-light text-foreground">
+                                {product.title}
+                              </h1>
+                            </Link>
                           </div>
                         </div>
                       ))}
@@ -100,17 +138,29 @@ export function Navbar() {
                     {/* Column 3 */}
                     <div className="space-y-3 border border-primary/25 p-4 rounded-lg">
                       <Link
-                        href={"/products/retail-operation"}
+                        href={'/products/retail-operation'}
                         className="flex items-center gap-2 text-lg font-semibold text-primary"
                       >
-                        <span className="font-medium ">Market Intelligence</span>
+                        <span className="font-medium ">
+                          Market Intelligence
+                        </span>
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                       {column3.map((product) => (
-                        <div key={product.title} className="flex items-start gap-2">
+                        <div
+                          key={product.title}
+                          className="flex items-start gap-2"
+                        >
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                           <div>
-                            <h1 className="font-light text-foreground">{product.title}</h1>
+                            <Link
+                              scroll={true}
+                              href={`${parent3}#${slugify(product.title)}`}
+                            >
+                              <h1 className="font-light text-foreground">
+                                {product.title}
+                              </h1>
+                            </Link>
                           </div>
                         </div>
                       ))}
@@ -126,7 +176,10 @@ export function Navbar() {
                   <div className="w-full min-w-[1000px] p-6">
                     <div className="grid grid-cols-3 gap-5">
                       {serviceGroups.map((group) => (
-                        <div key={group.title} className="space-y-4 border border-gray/25 p-4 rounded-lg w-auto">
+                        <div
+                          key={group.title}
+                          className="space-y-4 border border-gray/25 p-4 rounded-lg w-auto"
+                        >
                           <Link
                             href={group.href}
                             className="flex items-center gap-2 text-lg font-semibold text-primary"
@@ -136,12 +189,14 @@ export function Navbar() {
                           </Link>
                           <ul className="space-y-3">
                             {group.services.map((service) => (
-                              <li key={service.title} className="flex items-start gap-2 font-">
-                                <div className="mt-2 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                                <div>
-                                  <h1 className="font-light text-foreground">{service.title}</h1>
-                                </div>
-                              </li>
+                              <Link
+                                key={service.title}
+                                scroll={true}
+                                href={`${group.href}#${slugify(service.title)}`}
+                                className="block text-xs text-foreground/70 hover:text-foreground ml-2"
+                              >
+                                • {service.title}
+                              </Link>
                             ))}
                           </ul>
                         </div>
@@ -165,7 +220,9 @@ export function Navbar() {
                           href="/about-us"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
-                          <div className="text-sm font-medium leading-none">About us</div>
+                          <div className="text-sm font-medium leading-none">
+                            About us
+                          </div>
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -175,7 +232,9 @@ export function Navbar() {
                           href="/contact-us"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
-                          <div className="text-sm font-medium leading-none">Contact us</div>
+                          <div className="text-sm font-medium leading-none">
+                            Contact us
+                          </div>
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -185,7 +244,9 @@ export function Navbar() {
                           href="/blogs"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         >
-                          <div className="text-sm font-medium leading-none">Blogs</div>
+                          <div className="text-sm font-medium leading-none">
+                            Blogs
+                          </div>
                         </Link>
                       </NavigationMenuLink>
                     </li>
@@ -210,10 +271,10 @@ export function Navbar() {
           <SheetContent side="left" className="pr-0 text-primary w-[350px]">
             <SheetHeader>
               <SheetTitle>
-                <Link href={"/"}>
+                <Link href={'/'}>
                   <div className=" lg:hidden">
                     <Image
-                      src={images.logo || "/placeholder.svg"}
+                      src={images.logo || '/placeholder.svg'}
                       alt="logo.png"
                       width={1000}
                       height={1000}
@@ -222,18 +283,27 @@ export function Navbar() {
                   </div>
                 </Link>
               </SheetTitle>
-              <SheetDescription className="sr-only">Navigation menu</SheetDescription>
+              <SheetDescription className="sr-only">
+                Navigation menu
+              </SheetDescription>
             </SheetHeader>
             <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6 overflow-y-auto">
               <div className="flex flex-col space-y-4">
-                <Link href="/" className="transition-colors hover:text-foreground text-primary font-medium">
+                <Link
+                  href="/"
+                  className="transition-colors hover:text-foreground text-primary font-medium"
+                >
                   Home
                 </Link>
 
                 <Collapsible open={productsOpen} onOpenChange={setProductsOpen}>
                   <CollapsibleTrigger className="flex items-center justify-start w-full text-left font-medium hover:text-foreground">
                     Products
-                    <ChevronDown className={`h-4 w-4 ml-[45px] transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 ml-[45px] transition-transform ${
+                        productsOpen ? 'rotate-180' : ''
+                      }`}
+                    />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2 space-y-3">
                     <div className="ml-4 space-y-4">
@@ -259,7 +329,7 @@ export function Navbar() {
                           href="/products/content-optimization"
                           className="text-sm font-medium text-primary flex items-center gap-1"
                         >
-                          Content Power  <ArrowRight className="h-3 w-3" />
+                          Content Power <ArrowRight className="h-3 w-3" />
                         </Link>
                         {column2.map((product) => (
                           <Link
@@ -276,7 +346,7 @@ export function Navbar() {
                           href="/products/retail-operation"
                           className="text-sm font-medium text-primary flex items-center gap-1"
                         >
-                          Market Intelligence  <ArrowRight className="h-3 w-3" />
+                          Market Intelligence <ArrowRight className="h-3 w-3" />
                         </Link>
                         {column3.map((product) => (
                           <Link
@@ -295,17 +365,27 @@ export function Navbar() {
                 <Collapsible open={servicesOpen} onOpenChange={setServicesOpen}>
                   <CollapsibleTrigger className="flex items-center justify-start w-full text-left font-medium hover:text-foreground">
                     Services
-                    <ChevronDown className={`h-4 w-4 ml-[46px] transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 ml-[46px] transition-transform ${
+                        servicesOpen ? 'rotate-180' : ''
+                      }`}
+                    />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2 space-y-3">
                     <div className="ml-4 space-y-4">
                       {serviceGroups.map((group) => (
                         <div key={group.title} className="space-y-2">
-                          <Link href={group.href} className="text-sm font-medium text-primary flex items-center gap-1">
+                          <Link
+                            href={group.href}
+                            className="text-sm font-medium text-primary flex items-center gap-1"
+                          >
                             {group.title} <ArrowRight className="h-3 w-3" />
                           </Link>
                           {group.services.map((service) => (
-                            <div key={service.title} className="text-xs text-foreground/70 ml-2">
+                            <div
+                              key={service.title}
+                              className="text-xs text-foreground/70 ml-2"
+                            >
                               • {service.title}
                             </div>
                           ))}
@@ -315,34 +395,54 @@ export function Navbar() {
                   </CollapsibleContent>
                 </Collapsible>
 
-                <Collapsible open={resourcesOpen} onOpenChange={setResourcesOpen}>
+                <Collapsible
+                  open={resourcesOpen}
+                  onOpenChange={setResourcesOpen}
+                >
                   <CollapsibleTrigger className="flex items-center justify-start w-full text-left font-medium hover:text-foreground">
                     Resources
-                    <ChevronDown className={`h-4 w-4 ml-[33px] transition-transform ${resourcesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      className={`h-4 w-4 ml-[33px] transition-transform ${
+                        resourcesOpen ? 'rotate-180' : ''
+                      }`}
+                    />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="mt-2 space-y-2">
                     <div className="ml-4 space-y-2">
-                      <Link href="/about-us" className="block text-sm text-foreground/70 hover:text-foreground">
+                      <Link
+                        href="/about-us"
+                        className="block text-sm text-foreground/70 hover:text-foreground"
+                      >
                         About us
                       </Link>
-                      <Link href="/contact-us" className="block text-sm text-foreground/70 hover:text-foreground">
+                      <Link
+                        href="/contact-us"
+                        className="block text-sm text-foreground/70 hover:text-foreground"
+                      >
                         Contact us
                       </Link>
-                      <Link href="/blogs" className="block text-sm text-foreground/70 hover:text-foreground">
+                      <Link
+                        href="/blogs"
+                        className="block text-sm text-foreground/70 hover:text-foreground"
+                      >
                         Blogs
                       </Link>
                     </div>
                   </CollapsibleContent>
                 </Collapsible>
 
-                   <Link href="login">
-              <Button variant="outline" size="sm" className="border border-primary text-primary bg-transparent">
-                Sign In
-              </Button>
-            </Link>
-            <Link href="/contact-us">
-              <Button size="sm">Contact Us</Button>
-            </Link>
+                <Link href="login">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border border-primary text-primary bg-transparent"
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+                <Link href="/contact-us">
+                  <Button size="sm">Contact Us</Button>
+                </Link>
               </div>
             </div>
           </SheetContent>
@@ -350,10 +450,10 @@ export function Navbar() {
 
         {/* Mobile Logo */}
         <div className="flex items-center justify-between space-x-2 flex-1 md:flex-none md:justify-end">
-          <Link href={"/"}>
+          <Link href={'/'}>
             <div className="lg:hidden">
               <Image
-                src={images.logo || "/placeholder.svg"}
+                src={images.logo || '/placeholder.svg'}
                 alt="logo.png"
                 width={1000}
                 height={1000}
@@ -363,7 +463,11 @@ export function Navbar() {
           </Link>
           <nav className="flex items-center space-x-2">
             <Link href="login">
-              <Button variant="outline" size="sm" className="border border-primary text-primary bg-transparent">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border border-primary text-primary bg-transparent"
+              >
                 Sign In
               </Button>
             </Link>

@@ -8,6 +8,7 @@ import paidSearchImg from '../../../../../public/service/service_Image1.png'
 import { ServiceBanner } from '../_components/ServiceBanner'
 import retailImage from '@/../public/service/service_image_3.png'
 import adImage from '@/../public/service/ad.png'
+import slugify from '@/lib/slugify'
 
 const Page = () => {
   return (
@@ -22,6 +23,7 @@ const Page = () => {
       />
 
       <ServicePaidSearch
+        id={slugify('paid-search')}
         title="Paid Search"
         description="Search ads are a powerful tool to reach shoppers who are already looking for what you are offering. We identify high-performing keywords, optimize product listings, and actively manage bids to ensure your products rank competitively in search results. By analyzing traffic patterns and shopper behavior, we position your listings for maximum exposure and strong sales performance."
         image={paidSearchImg}
@@ -29,6 +31,7 @@ const Page = () => {
       />
 
       <RatailMediaNetwork
+        id={slugify('retail-media-network')}
         title="Retail Media Network"
         description="Brand awareness drives long-term growth. Through programmatic display and video advertising across retail media networks, streaming services, and online video platforms, we help your brand stay top of mind. We target the right audiences by engaging creatively, controlling frequency to avoid ad fatigue, and constantly test and adjust campaigns to maximize engagement and performance. "
         buttonText="Learn More"
@@ -38,6 +41,7 @@ const Page = () => {
       />
 
       <ReuseableTwo
+        id={slugify('optimization-metrics')}
         title="Optimization Metrics"
         description="We analyze real-time campaign data to optimize strategies, enhance targeting precision, and maximize ROAS. Through ongoing performance refinement, bid adjustments, and trend analysis, we ensure every advertising dollar delivers measurable impact, driving stronger conversions, greater efficiency, and sustainable growth across all major digital retail platforms. "
         buttonText="Learn More"

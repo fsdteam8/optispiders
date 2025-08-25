@@ -14,12 +14,14 @@ interface ShowcaseSectionProps {
   items: ShowcaseItem[]
   imageSrc: string
   reverse?: boolean
+  id?: string
 }
 
 export default function RetailShowcase({
   items,
   imageSrc,
   reverse = false,
+  id,
 }: ShowcaseSectionProps) {
   const [currentIndex, setCurrentIndex] = useState<number | null>(0) // Start with first item open
   const [progress, setProgress] = useState(0)
@@ -52,7 +54,7 @@ export default function RetailShowcase({
   }
 
   return (
-    <div className="container mx-auto my-6 lg:my-14">
+    <div className="container mx-auto my-6 lg:my-14 scroll-mt-24" id={id}>
       <Card className="overflow-hidden p-6">
         <div
           className={`flex flex-col gap-6 ${
@@ -76,10 +78,7 @@ export default function RetailShowcase({
           <div className="lg:w-1/2 lg:pl-6 mt-10 lg:mt-0">
             <div className="space-y-8">
               {items.map((item, index) => (
-                <div
-                  key={index}
-                  className="transition-all duration-500"
-                >
+                <div key={index} className="transition-all duration-500">
                   <h3
                     className="text-lg font-semibold text-primary mb-3 leading-tight cursor-pointer hover:text-primary-dark"
                     onClick={() => handleTitleClick(index)}

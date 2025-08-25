@@ -11,6 +11,7 @@ interface ServiceSectionProps {
   linkText?: string
   reverse?: boolean
   subtitle?: string
+  id?: string
   icon?: React.ReactNode
 }
 
@@ -23,21 +24,25 @@ export default function ServicePaidSearch({
   reverse = false,
   subtitle,
   icon,
+  id,
 }: ServiceSectionProps) {
   return (
-    <section className="bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.10)] rounded-lg flex justify-center items-center py-8">
+    <section
+      id={id}
+      className="bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.10)] rounded-lg flex justify-center items-center py-8 scroll-mt-24"
+    >
       <div
         className={`container mx-auto flex flex-col md:flex-row ${
           reverse ? 'md:flex-row-reverse' : ''
         } justify-center items-center gap-10 md:gap-20`}
       >
         {/* Image */}
-        <div className="relative w-full max-w-md md:max-w-sm lg:max-w-lg aspect-square mx-auto">
+        <div className="relative w-full max-w-md md:max-w-sm lg:max-w-lg aspect-square mx-auto rounded-2xl overflow-hidden bg-white">
           <Image
             src={image}
             alt={title}
             fill
-            className="rounded-lg object-contain"
+            className="object-contain"
             priority
           />
         </div>

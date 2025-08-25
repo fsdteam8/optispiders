@@ -24,9 +24,9 @@ const showcaseItems = [
   },
 ]
 
-const VisibilityIntelligence = () => {
+const VisibilityIntelligence = ({ id }: { id?: string }) => {
   return (
-    <div>
+    <div id={id} className="scroll-mt-25">
       <div className="container mx-auto ">
         <SmarterAutomation
           items={showcaseItems}

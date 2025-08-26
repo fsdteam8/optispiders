@@ -1,20 +1,25 @@
-import { Globe } from "lucide-react";
-import React from "react";
+import { Globe } from 'lucide-react'
+import React from 'react'
 
 interface ManagedMediaProps {
-  subtitle?: string;
-  title: string;
-  description: string;
-  icon?: React.ReactNode;
+  subtitle?: string
+  title: string
+  description: string
+  icon?: React.ReactNode
+  id?: string
 }
 
 export default function ManagedMedia({
-  subtitle = "Expert Services",
+  subtitle = 'Expert Services',
   title,
   description,
+  id,
 }: ManagedMediaProps) {
   return (
-    <section className="py-16 md:py-24 lg:py-24  rounded-lg flex justify-center bg-[#FAFAFA] ">
+    <section
+      id={id}
+      className="py-16 md:py-24 lg:py-24  rounded-lg flex justify-center bg-[#FAFAFA] scroll-mt-24 "
+    >
       <div className="shadow-[0_4px_8px_0_rgba(0,0,0,0.10)] w-full bg-[#FFF]">
         <div className="text-center px-4 sm:px-6 lg:px-6 container mx-auto">
           {/* Small Top Text */}
@@ -30,13 +35,13 @@ export default function ManagedMedia({
 
           {/* Description */}
           <p
-            className="mx-auto mb-6 text-sm sm:text-base font-normal" 
-            style={{ color: "var(--Foundation-Grey-grey-900, #2F2F2F)" }}
+            className="mx-auto mb-6 text-sm sm:text-base font-normal"
+            style={{ color: 'var(--Foundation-Grey-grey-900, #2F2F2F)' }}
           >
             {description}
           </p>
         </div>
       </div>
     </section>
-  );
+  )
 }

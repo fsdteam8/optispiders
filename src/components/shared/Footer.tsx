@@ -1,27 +1,32 @@
-import Image from "next/image";
-import Link from "next/link";
-import Logo from "../../../public/logo/logo.png";
-import NewsLetterForm from "./news-letter-form";
+import Image from 'next/image'
+import Link from 'next/link'
+import Logo from '../../../public/logo/logo.png'
+import NewsLetterForm from './news-letter-form'
 
 const quickLinks = [
-  { name: "Products", href: "/products/brands-and-shoppers-connect-instantly" },
-  { name: "Services", href: "/services/managed-media" },
+  { name: 'Products', href: '/products/brands-and-shoppers-connect-instantly' },
+  { name: 'Services', href: '/services/managed-media' },
   // { name: 'Case Studies', href: '/case-studies' },
-  { name: "About Us", href: "/about-us" },
-  { name: "Contact Us", href: "/contact-us" },
-];
+  { name: 'About Us', href: '/about-us' },
+  { name: 'Contact Us', href: '/contact-us' },
+]
 
 const servicesLinks = [
-  { name: "Managed Media", href: "/services/managed-media" },
-  // { name: 'Retail Media Network', href: '/services/retail-media-network' },
-  // { name: 'Brand Protection', href: '/services/brand-protection' },
-  // { name: 'Fee Recovery', href: '/services/fee-recovery' },
-  // { name: 'Smart Automation', href: '/services/smart-automation' },
-  // {
-  //   name: 'Privacy-First Intelligence',
-  //   href: '/services/privacy-first-intelligence',
-  // },
-];
+  { name: 'Managed Media', href: '/services/managed-media' },
+  {
+    name: 'Retail Media Network',
+    href: '/services/managed-media#retail-media-network',
+  },
+  {
+    name: 'Brand Protection',
+    href: '/services/retail-excellence#brand-protection',
+  },
+  { name: 'Fee Recovery', href: '/services/retail-excellence#fee-recovery' },
+  {
+    name: 'Content Syndication Support   ',
+    href: '/services/produce-content-and-creative#content-syndication-support',
+  },
+]
 
 const Footer = () => {
   return (
@@ -102,7 +107,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

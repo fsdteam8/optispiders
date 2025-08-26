@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface ShowcaseItem {
   title: string;
@@ -24,22 +24,22 @@ const SmarterAutomation: React.FC<ShowcaseProps> = (
   { items, rightImage, buttonLink, children },
   
 ) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
+  const [currentIndex] = useState(0);
+  // const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setCurrentIndex((current) => (current + 1) % items.length);
-          return 0;
-        }
-        return prev + 100 / 80;
-      });
-    }, 100);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setProgress((prev) => {
+  //       if (prev >= 100) {
+  //         setCurrentIndex((current) => (current + 1) % items.length);
+  //         return 0;
+  //       }
+  //       return prev + 100 / 80;
+  //     });
+  //   }, 100);
 
-    return () => clearInterval(interval);
-  }, [items.length]);
+  //   return () => clearInterval(interval);
+  // }, [items.length]);
 
   return (
     <section>
@@ -65,14 +65,14 @@ const SmarterAutomation: React.FC<ShowcaseProps> = (
                   </h3>
 
                   {/* Progress Bar */}
-                  {index === currentIndex && (
+                  {/* {index === currentIndex && (
                     <div className="w-full h-1 bg-gray-200 rounded-full mb-3">
                       <div
                         className="h-full bg-primary rounded-full transition-all duration-100 ease-linear"
                         style={{ width: `${progress}%` }}
                       />
                     </div>
-                  )}
+                  )} */}
 
                   {/* Animate Description */}
                   <AnimatePresence initial={false}>

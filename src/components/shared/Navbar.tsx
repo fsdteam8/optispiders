@@ -49,15 +49,16 @@ export function Navbar() {
       <div className="container flex h-[80px] py-3 items-center justify-between">
         {/* Logo */}
         <Link href={'/'}>
-          <div className="hidden lg:block">
-            <Image
-              src={images.logo || '/placeholder.svg'}
-              alt="logo.png"
-              width={100}
-              height={80}
-              className="w-[130px]"
-            />
-          </div>
+<Image
+  src={images.logo || '/placeholder.svg'}
+  alt="Logo"
+  width={260}   // use bigger intrinsic width
+  height={160}  // adjust proportionally
+  className="w-[130px] h-auto" 
+  priority
+  unoptimized
+/>
+
         </Link>
 
         {/* Desktop Navigation */}

@@ -12,6 +12,7 @@ const HeroBannerTwo: React.FC<HeroProps & { bgImage?: BgType }> = ({
   badgeText,
   badgeIcon,
   heading,
+  coloredHeading,
   description,
   primaryBtnText = 'Get Started',
   primaryBtnIcon = <ArrowRight />,
@@ -40,7 +41,8 @@ const HeroBannerTwo: React.FC<HeroProps & { bgImage?: BgType }> = ({
             )}
 
             <h1 className="my-5 leading-[2.8] text-3xl sm:text-4xl lg:text-[42px] font-semibold">
-              {heading}
+              {`${heading}`}
+              <span className="text-[#0070f3]">{coloredHeading}</span>
             </h1>
 
             <p className="text-base sm:text-lg opacity-90">{description}</p>

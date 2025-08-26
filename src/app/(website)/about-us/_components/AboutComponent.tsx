@@ -22,7 +22,8 @@ export const AboutComponent = () => {
             className="w-4 h-4"
           />
         }
-        heading="About Us"
+        heading="About "
+        coloredHeading="Us"
         description="Explore your full catalog—intelligently optimized by OptiSpiders’ AI for success across every online shelf. Spot what’s popular, what converts best, and what’s primed for your campaigns."
         //Navigate to /home and /services
         onPrimaryBtnClick={() => router.push('/services/managed-media')}

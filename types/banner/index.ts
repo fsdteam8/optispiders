@@ -4,6 +4,7 @@ export interface HeroProps {
   badgeIcon?: React.ReactNode
   heading: React.ReactNode // allow spans, colored words, etc.
   description: string
+  coloredHeading?: string
   primaryBtnText?: string
   primaryBtnIcon?: React.ReactNode
   onPrimaryBtnClick?: () => void

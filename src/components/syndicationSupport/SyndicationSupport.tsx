@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const SyndicationSupport = () => {
+const SyndicationSupport = ({ id }: { id?: string }) => {
   return (
-    <section className="bg-[#FAFAFA]">
+    <section id={id} className="bg-[#FAFAFA] scroll-mt-24">
       <div className="container mx-auto my-32 ">
         <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-[60%]">

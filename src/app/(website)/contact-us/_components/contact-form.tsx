@@ -143,7 +143,7 @@ export default function ContactForm() {
                         <PhoneInput
                           placeholder=""
                           {...field}
-                          defaultCountry="TR"
+                          defaultCountry="US"
                         />
                       </FormControl>
 

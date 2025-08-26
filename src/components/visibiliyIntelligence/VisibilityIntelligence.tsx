@@ -24,10 +24,10 @@ const showcaseItems = [
   },
 ]
 
-const VisibilityIntelligence = () => {
+const VisibilityIntelligence = ({ id }: { id?: string }) => {
   return (
-    <div>
-      <div className="container mx-auto">
+    <div id={id} className="scroll-mt-24">
+      <div className="container mx-auto ">
         <SmarterAutomation
           items={showcaseItems}
           rightImage={'/reuseable/visibility.png'}

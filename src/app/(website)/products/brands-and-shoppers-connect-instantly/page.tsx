@@ -9,6 +9,7 @@ import RatailMediaNetwork from '@/components/shared/RatailMediaNetwork'
 import RetailShowcase from '@/components/home/RetailShowcase'
 import { images } from '@/constants/image'
 import SmartAutomations from '@/components/smartautomatins/SmartAutomations'
+import slugify from '@/lib/slugify'
 
 const itemsTwo = [
   {
@@ -47,6 +48,7 @@ const Page = () => {
 
       <div className="mt-20">
         <ServicePaidSearch
+          id={slugify('retail-media')}
           title="Where Brands and Shoppers Connect Instantly"
           description="Step into the future of retail media with OptiSpiders—a platform designed for visionaries. Our advanced suite doesn’t just place ads; it intelligently bridges your products to high-intent shoppers, amplifying your brand at every digital touchpoint. From precision targeting to live, actionable insights and seamless brand elevation, OptiSpiders empowers you to own every moment on the digital shelf. Trusted by forward-thinking brands aiming for growth without limits."
           image={products1}
@@ -57,6 +59,7 @@ const Page = () => {
       <SmartAutomations />
 
       <ServicePaidSearch
+        id={slugify('media-automation')}
         title="Privacy-First Intelligence, Powered by OptiSpiders"
         description="OptiSpiders gives you the power to harness first-party data securely—no cookies, no compromises. In our privacy-first environment, your data stays protected while our closed-loop insights unlock powerful customer segments and campaign personalization. Confidently reach your audience, on your terms,  they shop."
         image={products3}
@@ -64,6 +67,7 @@ const Page = () => {
       />
 
       <RatailMediaNetwork
+        id={slugify('data-protection')}
         title="Get Your Products Discovered, When It Matters Most"
         description="Search is where intent meets opportunity—and where OptiSpiders helps you win. With intelligent placement targeting and real-time performance analytics, you’ll always have the right product in the right spot, at the perfect moment. Unlock higher conversions, capture more share, and drive measurable growth with smarter paid search."
         buttonText="Learn More"
@@ -73,6 +77,7 @@ const Page = () => {
       />
 
       <ServicePaidSearch
+        id={slugify('product-placement')}
         title="Build Campaigns at the Speed of Opportunity"
         description="Launch new orders, creative assets, and audience segments in a fraction of the time using OptiSpiders’ streamlined campaign builder. Our advanced automation tools remove manual busywork, enabling you to focus on optimizing ROAS, accelerating growth, and building your brand—smarter, faster, and more efficiently."
         image={product5}
@@ -80,6 +85,7 @@ const Page = () => {
       />
 
       <RetailShowcase
+        id={slugify('campaign-accelerator')}
         items={itemsTwo}
         imageSrc={images.products6}
         reverse={true}

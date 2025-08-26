@@ -4,9 +4,9 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const RetailInsights = () => {
+const RetailInsights = ({ id }: { id?: string }) => {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section id={id} className="bg-white py-16 sm:py-24 scroll-mt-24 ">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="w-full ">

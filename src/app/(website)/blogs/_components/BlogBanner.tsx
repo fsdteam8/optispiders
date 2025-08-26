@@ -21,7 +21,8 @@ export const BlogBanner = () => {
             className="w-4 h-4"
           />
         }
-        heading="Our Blogs"
+        heading="Our "
+        coloredHeading="Blogs"
         description="Explore your complete product catalog—enhanced by OptiSpiders’ AI for maximum impact across every digital shelf. Uncover top trends, best converters, and the items primed for your next campaign."
         //Navigate to /home and /services
         onPrimaryBtnClick={() => router.push('/')}

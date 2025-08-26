@@ -1,17 +1,18 @@
 // components/ServiceSection.tsx
-import Image, { StaticImageData } from "next/image";
-import React from "react";
-import { ArrowRight } from "lucide-react";
+import Image, { StaticImageData } from 'next/image'
+import React from 'react'
+import { ArrowRight } from 'lucide-react'
 
 interface ServiceSectionProps {
-  title: string;
-  description: string;
-  image: StaticImageData | string;
-  link: string;
-  linkText?: string;
-  reverse?: boolean;
-  subtitle?: string;
-  icon?: React.ReactNode;
+  title: string
+  description: string
+  image: StaticImageData | string
+  link: string
+  linkText?: string
+  reverse?: boolean
+  subtitle?: string
+  id?: string
+  icon?: React.ReactNode
 }
 
 export default function ServicePaidSearch({
@@ -19,25 +20,29 @@ export default function ServicePaidSearch({
   description,
   image,
   link,
-  linkText = "Learn more",
+  linkText = 'Learn more',
   reverse = false,
   subtitle,
   icon,
+  id,
 }: ServiceSectionProps) {
   return (
-    <section className="bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.10)] rounded-lg flex justify-center items-center py-8">
+    <section
+      id={id}
+      className="bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.10)] rounded-lg flex justify-center items-center py-8 scroll-mt-24"
+    >
       <div
         className={`container mx-auto flex flex-col md:flex-row ${
-          reverse ? "md:flex-row-reverse" : ""
+          reverse ? 'md:flex-row-reverse' : ''
         } justify-center items-center gap-10 md:gap-20`}
       >
         {/* Image */}
-        <div className="relative w-full max-w-md md:max-w-sm lg:max-w-lg aspect-square mx-auto">
+        <div className="relative w-full max-w-md md:max-w-sm lg:max-w-lg aspect-square mx-auto rounded-2xl overflow-hidden bg-white">
           <Image
             src={image}
             alt={title}
             fill
-            className="rounded-lg object-cover"
+            className="object-contain"
             priority
           />
         </div>
@@ -52,7 +57,7 @@ export default function ServicePaidSearch({
             {title}
           </h2>
           <p className="text-[#2F2F2F] mb-10 text-sm leading-snug">
-            {description.includes("<br") ? (
+            {description.includes('<br') ? (
               <span dangerouslySetInnerHTML={{ __html: description }} />
             ) : (
               description
@@ -67,5 +72,5 @@ export default function ServicePaidSearch({
         </div>
       </div>
     </section>
-  );
+  )
 }

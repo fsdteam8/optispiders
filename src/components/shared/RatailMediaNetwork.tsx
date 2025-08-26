@@ -7,6 +7,7 @@ interface RatailMediaNetworkProps {
   buttonLink?: string
   imageSrc: StaticImageData | string
   imageAlt: string
+  id?: string
   toptext?: string
 }
 
@@ -17,10 +18,11 @@ const RatailMediaNetwork = ({
   buttonText,
   buttonLink = '/contact-us',
   imageSrc,
+  id,
   imageAlt,
 }: RatailMediaNetworkProps) => {
   return (
-    <section className=" shadow-md bg-[#FAFAFA] my-12">
+    <section id={id} className=" shadow-md bg-[#FAFAFA] my-12 scroll-mt-24">
       <div className="container mx-auto py-12 ">
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
           <div className="md:w-1/2">
@@ -53,8 +55,8 @@ const RatailMediaNetwork = ({
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={500}
-              height={500}
+              width={700}
+              height={700}
               className="w-full h-full object-cover"
             />
           </div>

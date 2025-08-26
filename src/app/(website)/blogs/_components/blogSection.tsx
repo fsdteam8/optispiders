@@ -29,12 +29,20 @@ const BlogSection = async () => {
           >
             {/* Image */}
             <div className="relative w-full h-64 mb-4">
-              <Image
-                src={blog.thumbnail}
-                alt={blog.title}
-                fill
-                className="rounded-lg object-cover"
-              />
+              {blog.thumbnail?.toLowerCase().endsWith(".mp4") ? (
+                <video
+                  src={blog.thumbnail}
+                  controls
+                  className="w-full h-full rounded-lg object-cover"
+                />
+              ) : (
+                <Image
+                  src={blog.thumbnail}
+                  alt={blog.title}
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              )}
             </div>
 
             {/* Meta */}

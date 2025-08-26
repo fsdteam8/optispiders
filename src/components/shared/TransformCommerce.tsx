@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Shield, TrendingUp, Zap } from 'lucide-react'
+import Link from 'next/link'
 
 const features = [
   {
@@ -53,17 +54,21 @@ export default function TransformCommerce() {
 
         {/* Buttons */}
         <div className="flex justify-center gap-4">
-          <Button className="bg-blue-500 hover:bg-blue-600 text-white flex items-center gap-2 px-4 py-2 rounded">
-            <span className="text-base">Get Started</span>
-            <ArrowRight />
-          </Button>
+          <Link href={'/services/managed-media'}>
+            <Button className="bg-blue-500 hover:bg-blue-600 text-white flex items-center gap-2 px-4 py-2 rounded">
+              <span className="text-base">Get Started</span>
+              <ArrowRight />
+            </Button>
+          </Link>
 
-          <Button
-            variant="outline"
-            className=" bg-transparent text-white hover:text-[#0a3d62]"
-          >
-            Explore Products
-          </Button>
+          <Link href={'/products/brands-and-shoppers-connect-instantly'}>
+            <Button
+              variant="outline"
+              className=" bg-transparent text-white hover:text-[#0a3d62]"
+            >
+              Explore Products
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

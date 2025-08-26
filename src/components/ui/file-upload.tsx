@@ -2,7 +2,7 @@
 
 import { useEdgeStore } from "@/lib/edgestore";
 import { cn } from "@/lib/utils";
-import { ImageIcon, Loader2, Upload } from "lucide-react";
+import { CloudUpload, Loader2, Upload } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -24,6 +24,7 @@ export function FileUploader({
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [fileName, setFileName] = useState<string>("");
+  const [fileType, setFileType] = useState<string>("");
   const { edgestore } = useEdgeStore();
 
   useEffect(() => {
@@ -32,7 +33,7 @@ export function FileUploader({
     }
   }, [uploading, onUploadStateChange]);
 
-  // Extract filename from URL if value exists
+  // Extract filename & type from URL if value exists
   useEffect(() => {
     if (value) {
       try {
@@ -41,11 +42,20 @@ export function FileUploader({
         const lastSegment = pathSegments[pathSegments.length - 1];
         const cleanName = lastSegment.split("?")[0];
         setFileName(cleanName || "Existing file");
+
+        // crude check: ends with .mp4 → treat as video
+        if (cleanName.toLowerCase().endsWith(".mp4")) {
+          setFileType("video");
+        } else {
+          setFileType("image");
+        }
       } catch {
         setFileName("Existing file");
+        setFileType("image");
       }
     } else {
       setFileName("");
+      setFileType("");
     }
   }, [value]);
 
@@ -56,6 +66,7 @@ export function FileUploader({
       const selectedFile = acceptedFiles[0];
       setFile(selectedFile);
       setFileName(selectedFile.name);
+      setFileType(selectedFile.type.startsWith("video") ? "video" : "image");
       setUploading(true);
       setUploadProgress(0);
 
@@ -85,6 +96,7 @@ export function FileUploader({
     multiple: false,
     accept: {
       "image/*": [],
+      "video/mp4": [],
     },
   });
 
@@ -100,27 +112,42 @@ export function FileUploader({
       >
         <input {...getInputProps()} id={id ?? "File-Upload"} />
 
-        {/* Preview if image exists */}
+        {/* Preview if file exists */}
         {value ? (
           <div className="flex flex-col items-center gap-2">
-            <div className="relative max-h-40 w-auto">
-              <Image
+            {fileType === "video" ? (
+              <video
                 src={value}
-                alt="Uploaded"
-                width={160} // set a fixed size to avoid layout shift
-                height={160}
-                className="rounded-md object-contain shadow max-h-40 w-auto"
+                controls
+                className="rounded-md shadow max-h-40 w-auto"
               />
-            </div>
+            ) : (
+              <div className="relative max-h-40 w-auto">
+                <Image
+                  src={value}
+                  alt="Uploaded"
+                  width={160}
+                  height={160}
+                  className="rounded-md object-contain shadow max-h-40 w-auto"
+                />
+              </div>
+            )}
             <span className="text-xs text-muted-foreground truncate">
               {fileName}
             </span>
           </div>
         ) : (
           <div className="flex flex-col items-center text-muted-foreground gap-1">
-            <ImageIcon className="h-8 w-8" />
+            {isDragActive ? (
+              <Upload className="h-8 w-8" />
+            ) : (
+              <>
+                {/* <ImageIcon className="h-8 w-8" /> */}
+                <CloudUpload className="h-8 w-8" />
+              </>
+            )}
             <p className="text-xs">
-              {isDragActive ? "Drop your image here" : "Drag & drop or click"}
+              {isDragActive ? "Drop your file here" : "Drag & drop or click"}
             </p>
           </div>
         )}
@@ -144,7 +171,7 @@ export function FileUploader({
           ) : (
             <>
               <Upload className="h-3 w-3" />
-              <span>Choose Image</span>
+              <span>Choose File</span>
             </>
           )}
         </div>

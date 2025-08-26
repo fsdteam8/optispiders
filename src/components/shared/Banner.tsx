@@ -1,14 +1,18 @@
 import Stats from '@/app/(website)/_components/stats'
 import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
 import { HeroProps } from '../../../types/banner'
 import { Button } from '../ui/button'
+import MainBanner from '@/../public/product/main-banner.png'
+import type { StaticImageData } from 'next/image'
 
-const HeroBannerTwo: React.FC<HeroProps> = ({
+type BgType = string | StaticImageData
+
+const HeroBannerTwo: React.FC<HeroProps & { bgImage?: BgType }> = ({
   isStatsShow = false,
   badgeText,
   badgeIcon,
   heading,
+  coloredHeading,
   description,
   primaryBtnText = 'Get Started',
   primaryBtnIcon = <ArrowRight />,
@@ -16,30 +20,29 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
   secondaryBtnText = 'View Products',
   onSecondaryBtnClick,
   secondaryBtnVariant = 'outline',
-  imageSrc = '/reuseable/hero-banner.png',
-  imageAlt = 'Hero image',
-  bgImage = 'https://files.edgestore.dev/rzoslohhv2lk81i6/optispiders/_public/banner.webp',
+  bgImage = MainBanner, // can be string `/product/main-banner.png` or import object
 }) => {
+  // Normalize to a string URL no matter what was passed
+  const bg =
+    typeof bgImage === 'string' ? bgImage : (bgImage as StaticImageData).src
+
   return (
     <div className="relative">
       <div
-        className="relative min-h-[70vh] py-[100px] text-white flex flex-col items-center justify-center bg-center bg-cover bg-primary"
-        style={{ backgroundImage: `url(${bgImage})` }}
+        className="relative min-h-[70vh] py-[100px] text-white flex flex-col items-center justify-center bg-center bg-cover bg-no-repeat"
+        style={{ backgroundImage: `url(${bg})` }}
       >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-white/5 transition-colors duration-300" />
-
-        <div className="container relative z-10 flex flex-col gap-10 lg:flex-row justify-between items-center">
-          {/* Left Side */}
-          <div className="flex-1 text-center lg:text-left">
+        <div className="container relative z-10 flex justify-start items-center">
+          <div className="flex-1 text-left max-w-2xl">
             {badgeText && (
-              <h1 className="flex items-center justify-center lg:justify-start text-sm gap-2 text-[#4299e1]">
+              <h1 className="flex items-center justify-start text-sm gap-2 text-[#4299e1]">
                 {badgeIcon} {badgeText}
               </h1>
             )}
 
             <h1 className="my-5 leading-[2.8] text-3xl sm:text-4xl lg:text-[42px] font-semibold">
-              {heading}
+              {`${heading}`}
+              <span className="text-[#0070f3]">{coloredHeading}</span>
             </h1>
 
             <p className="text-base sm:text-lg opacity-90">{description}</p>
@@ -64,22 +67,9 @@ const HeroBannerTwo: React.FC<HeroProps> = ({
               )}
             </div>
           </div>
-
-          {/* Right Side */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={600}
-              height={400}
-              className="w-full max-w-[550px] h-auto rounded-lg shadow-lg"
-              priority
-            />
-          </div>
         </div>
       </div>
 
-      {/* Stats Section */}
       {isStatsShow && (
         <div>
           <Stats />
